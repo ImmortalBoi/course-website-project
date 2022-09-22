@@ -5,7 +5,7 @@
         <div class="container text-center py-5">
             <h1 class="text-white display-1">Course Detail</h1>
             <div class="d-inline-flex text-white mb-5">
-                <p class="m-0 text-uppercase"><a class="text-white" href="">Home</a></p>
+                <p class="m-0 text-uppercase"><a class="text-white" href="{{ URL::to('/') }}/">Home</a></p>
                 <i class="fa fa-angle-double-right pt-1 px-3"></i>
                 <p class="m-0 text-uppercase">Course Detail</p>
             </div>
@@ -15,9 +15,9 @@
                         <button class="btn btn-outline-light bg-white text-body px-4 dropdown-toggle" type="button" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">Courses</button>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">Courses 1</a>
-                            <a class="dropdown-item" href="#">Courses 2</a>
-                            <a class="dropdown-item" href="#">Courses 3</a>
+                            <a class="dropdown-item" href="{{ URL::to('/') }}/#">Courses 1</a>
+                            <a class="dropdown-item" href="{{ URL::to('/') }}/#">Courses 2</a>
+                            <a class="dropdown-item" href="{{ URL::to('/') }}/#">Courses 3</a>
                         </div>
                     </div>
                     <input type="text" class="form-control border-light" style="padding: 30px 25px;" placeholder="Keyword">
@@ -40,7 +40,7 @@
                             <h6 class="d-inline-block position-relative text-secondary text-uppercase pb-2">Course Detail</h6>
                             <h1 class="display-4">Web design & development courses for beginners</h1>
                         </div>
-                        <img class="img-fluid rounded w-100 mb-4" src="img/header.jpg" alt="Image">
+                        <img class="img-fluid rounded w-100 mb-4" src="{{ URL::to('/') }}/img/header.jpg" alt="Image">
                         <p>Tempor erat elitr at rebum at at clita aliquyam consetetur. Diam dolor diam ipsum et, tempor voluptua sit consetetur sit. Aliquyam diam amet diam et eos sadipscing labore. Clita erat ipsum et lorem et sit, sed stet no labore lorem sit. Sanctus clita duo justo et tempor consetetur takimata eirmod, dolores takimata consetetur invidunt magna dolores aliquyam dolores dolore. Amet erat amet et magna</p>
 
                         <p>Sadipscing labore amet rebum est et justo gubergren. Et eirmod ipsum sit diam ut magna lorem.
@@ -52,8 +52,8 @@
 
                     <h2 class="mb-3">Related Courses</h2>
                     <div class="owl-carousel related-carousel position-relative" style="padding: 0 30px;">
-                        <a class="courses-list-item position-relative d-block overflow-hidden mb-2" href="detail.html">
-                            <img class="img-fluid" src="img/courses-1.jpg" alt="">
+                        <a class="courses-list-item position-relative d-block overflow-hidden mb-2" href="{{ URL::to('/') }}/detail">
+                            <img class="img-fluid" src="{{ URL::to('/') }}/img/courses-1.jpg" alt="">
                             <div class="courses-text">
                                 <h4 class="text-center text-white px-3">Web design & development courses for
                                     beginners</h4>
@@ -66,8 +66,8 @@
                                 </div>
                             </div>
                         </a>
-                        <a class="courses-list-item position-relative d-block overflow-hidden mb-2" href="detail.html">
-                            <img class="img-fluid" src="img/courses-2.jpg" alt="">
+                        <a class="courses-list-item position-relative d-block overflow-hidden mb-2" href="{{ URL::to('/') }}/detail">
+                            <img class="img-fluid" src="{{ URL::to('/') }}/img/courses-2.jpg" alt="">
                             <div class="courses-text">
                                 <h4 class="text-center text-white px-3">Web design & development courses for
                                     beginners</h4>
@@ -80,8 +80,8 @@
                                 </div>
                             </div>
                         </a>
-                        <a class="courses-list-item position-relative d-block overflow-hidden mb-2" href="detail.html">
-                            <img class="img-fluid" src="img/courses-3.jpg" alt="">
+                        <a class="courses-list-item position-relative d-block overflow-hidden mb-2" href="{{ URL::to('/') }}/detail">
+                            <img class="img-fluid" src="{{ URL::to('/') }}/img/courses-3.jpg" alt="">
                             <div class="courses-text">
                                 <h4 class="text-center text-white px-3">Web design & development courses for
                                     beginners</h4>
@@ -126,7 +126,7 @@
                         </div>
                         <h5 class="text-white py-3 px-4 m-0">Course Price: $199</h5>
                         <div class="py-3 px-4">
-                            <a class="btn btn-block btn-secondary py-3 px-5" href="">Enroll Now</a>
+                            <a class="btn btn-block btn-secondary py-3 px-5" href="{{ URL::to('/') }}/">Enroll Now</a>
                         </div>
                     </div>
 
@@ -134,23 +134,23 @@
                         <h2 class="mb-3">Categories</h2>
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item d-flex justify-content-between align-items-center px-0">
-                                <a href="" class="text-decoration-none h6 m-0">Web Design</a>
+                                <a href="{{ URL::to('/') }}/" class="text-decoration-none h6 m-0">Web Design</a>
                                 <span class="badge badge-primary badge-pill">150</span>
                             </li>
                             <li class="list-group-item d-flex justify-content-between align-items-center px-0">
-                                <a href="" class="text-decoration-none h6 m-0">Web Development</a>
+                                <a href="{{ URL::to('/') }}/" class="text-decoration-none h6 m-0">Web Development</a>
                                 <span class="badge badge-primary badge-pill">131</span>
                             </li>
                             <li class="list-group-item d-flex justify-content-between align-items-center px-0">
-                                <a href="" class="text-decoration-none h6 m-0">Online Marketing</a>
+                                <a href="{{ URL::to('/') }}/" class="text-decoration-none h6 m-0">Online Marketing</a>
                                 <span class="badge badge-primary badge-pill">78</span>
                             </li>
                             <li class="list-group-item d-flex justify-content-between align-items-center px-0">
-                                <a href="" class="text-decoration-none h6 m-0">Keyword Research</a>
+                                <a href="{{ URL::to('/') }}/" class="text-decoration-none h6 m-0">Keyword Research</a>
                                 <span class="badge badge-primary badge-pill">56</span>
                             </li>
                             <li class="list-group-item d-flex justify-content-between align-items-center px-0">
-                                <a href="" class="text-decoration-none h6 m-0">Email Marketing</a>
+                                <a href="{{ URL::to('/') }}/" class="text-decoration-none h6 m-0">Email Marketing</a>
                                 <span class="badge badge-primary badge-pill">98</span>
                             </li>
                         </ul>
@@ -158,8 +158,8 @@
 
                     <div class="mb-5">
                         <h2 class="mb-4">Recent Courses</h2>
-                        <a class="d-flex align-items-center text-decoration-none mb-4" href="">
-                            <img class="img-fluid rounded" src="img/courses-80x80.jpg" alt="">
+                        <a class="d-flex align-items-center text-decoration-none mb-4" href="{{ URL::to('/') }}/">
+                            <img class="img-fluid rounded" src="{{ URL::to('/') }}/img/courses-80x80.jpg" alt="">
                             <div class="pl-3">
                                 <h6>Web design & development courses for beginners</h6>
                                 <div class="d-flex">
@@ -168,8 +168,8 @@
                                 </div>
                             </div>
                         </a>
-                        <a class="d-flex align-items-center text-decoration-none mb-4" href="">
-                            <img class="img-fluid rounded" src="img/courses-80x80.jpg" alt="">
+                        <a class="d-flex align-items-center text-decoration-none mb-4" href="{{ URL::to('/') }}/">
+                            <img class="img-fluid rounded" src="{{ URL::to('/') }}/img/courses-80x80.jpg" alt="">
                             <div class="pl-3">
                                 <h6>Web design & development courses for beginners</h6>
                                 <div class="d-flex">
@@ -178,8 +178,8 @@
                                 </div>
                             </div>
                         </a>
-                        <a class="d-flex align-items-center text-decoration-none mb-4" href="">
-                            <img class="img-fluid rounded" src="img/courses-80x80.jpg" alt="">
+                        <a class="d-flex align-items-center text-decoration-none mb-4" href="{{ URL::to('/') }}/">
+                            <img class="img-fluid rounded" src="{{ URL::to('/') }}/img/courses-80x80.jpg" alt="">
                             <div class="pl-3">
                                 <h6>Web design & development courses for beginners</h6>
                                 <div class="d-flex">
@@ -188,8 +188,8 @@
                                 </div>
                             </div>
                         </a>
-                        <a class="d-flex align-items-center text-decoration-none" href="">
-                            <img class="img-fluid rounded" src="img/courses-80x80.jpg" alt="">
+                        <a class="d-flex align-items-center text-decoration-none" href="{{ URL::to('/') }}/">
+                            <img class="img-fluid rounded" src="{{ URL::to('/') }}/img/courses-80x80.jpg" alt="">
                             <div class="pl-3">
                                 <h6>Web design & development courses for beginners</h6>
                                 <div class="d-flex">
