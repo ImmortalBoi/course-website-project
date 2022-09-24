@@ -14,8 +14,10 @@ return new class extends Migration
     public function up()
     {
         Schema::create('admins', function (Blueprint $table) {
-            $table->foreignId('admin_id')->references('account_id')->on('accounts');
+            $table->id('admin_id');
             $table->string('admin_name');
+            $table->string('admin_email')->unique();
+            $table->string('admin_password');
             $table->timestamps();
         });
     }

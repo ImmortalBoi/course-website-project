@@ -14,8 +14,10 @@ return new class extends Migration
     public function up()
     {
         Schema::create('instructors', function (Blueprint $table) {
-            $table->foreignId('instructor_id')->references('account_id')->on('accounts');
+            $table->id('instructor_id');
             $table->string('instructor_name');
+            $table->string('instructor_email')->unique();
+            $table->string('instructor_password');
             $table->timestamps();
         });
     }
