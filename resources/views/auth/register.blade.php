@@ -51,7 +51,7 @@
                             <div class="col-md-12 mb-4">
                               <div class="form-outline">
                                 <x-text-input id="name" class="form-control" type="text" name="name" :value="old('name')" required autofocus />
-                                <label class="form-label" for="form3Example1">First name</label>
+                                <label class="form-label" for="form3Example1">Full Name</label>
                               </div>
                             </div>
 
@@ -77,7 +77,11 @@
                             <x-text-input id="password_confirmation" class="form-control"
                                         type="password"
                                         name="password_confirmation" required />
-                            <label class="form-label" for="form3Example4">Password</label>
+                            <label class="form-label" for="form3Example4">Confirm Password</label>
+                          </div>
+
+                          <div>
+                            <input type="number" id="status" name="status" hidden value="1">
                           </div>
 
                           <!--Already Registered -->
