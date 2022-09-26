@@ -15,9 +15,11 @@ return new class extends Migration
     {
         Schema::create('courses', function (Blueprint $table) {
             $table->id('course_id');
-            $table->string('course_name');
+            $table->string('course_name')->nullable(false);
             $table->foreignId('instructor_id')->references('instructor_id')->on('instructors');
-            $table->timestamps();
+            $table->binary('course_img');
+            $table->longText('course_description');
+            $table->timestamps(0);
         });
     }
 

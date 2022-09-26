@@ -50,15 +50,7 @@ Route::middleware(['auth','admin'])->name('admin.')->prefix('admin')->group(func
     Route::get('/',[AdminController::class,'index'])->name('index');
 });
 
-// Route::middleware(['student'])->group(function(){
-//     Route::get('/st',[StudentController::class,'index']);
-// });
-
-// Route::group(['middleware' => ['student']], function () {
-//     Route::get('st', [StudentController::class,'index'] );
-// });
-
-// Route::get('/st',[StudentController::class,'index']);
+Route::get('student',[StudentController::class,'store'])->name('st-store');
 
 Route::resource('courseControl', CourseController::class);
 
