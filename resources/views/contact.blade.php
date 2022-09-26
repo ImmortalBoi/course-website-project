@@ -29,5 +29,5 @@
         </div>
     </div>
     <!-- Header End -->
-    <x-contact></x-contact>
+    <x-partials.contact></x-partials.contact>
 @endsection()

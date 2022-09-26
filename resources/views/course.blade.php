@@ -163,6 +163,4 @@
         </div>
     </div>
     <!-- Courses End -->
-
-
 @endsection()

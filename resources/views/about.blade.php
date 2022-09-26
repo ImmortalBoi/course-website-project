@@ -6,13 +6,13 @@
             <h1 class="text-white display-1">About</h1>
             <div class="d-inline-flex text-white mb-5">
                 <p class="m-0 text-uppercase"><a class="text-white" href="">Home</a></p>
-                <i class="fa fa-angle-double-right pt-1 px-3"></i>
+                <i class="fa fa-angle-double-right pt-1 px-partials3"></i>
                 <p class="m-0 text-uppercase">About</p>
             </div>
-            <div class="mx-auto mb-5" style="width: 100%; max-width: 600px;">
+            <div class="mx-partialsauto mb-5" style="width: 100%; max-partialswidth: 600px;">
                 <div class="input-group">
                     <div class="input-group-prepend">
-                        <button class="btn btn-outline-light bg-white text-body px-4 dropdown-toggle" type="button" data-toggle="dropdown"
+                        <button class="btn btn-outline-light bg-white text-body px-partials4 dropdown-toggle" type="button" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">Courses</button>
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="#">Courses 1</a>
@@ -22,14 +22,14 @@
                     </div>
                     <input type="text" class="form-control border-light" style="padding: 30px 25px;" placeholder="Keyword">
                     <div class="input-group-append">
-                        <button class="btn btn-secondary px-4 px-lg-5">Search</button>
+                        <button class="btn btn-secondary px-partials4 px-partialslg-5">Search</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <!-- Header End -->
-    <x-about></x-about>
-    <x-feature></x-feature>
-    <x-testimonial></x-testimonial>
+    <x-partialsabout></x-partialsabout>
+    <x-partialsfeature></x-partialsfeature>
+    <x-partialstestimonial></x-partialstestimonial>
 @endsection()
