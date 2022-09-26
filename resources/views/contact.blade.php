@@ -1,5 +1,4 @@
-@extends('head')
-@section('content')
+<x-base-layout>
     <!-- Header Start -->
     <div class="jumbotron jumbotron-fluid page-header position-relative overlay-bottom" style="margin-bottom: 90px;">
         <div class="container text-center py-5">
@@ -29,5 +28,6 @@
         </div>
     </div>
     <!-- Header End -->
-    <x-partials.contact></x-partials.contact>
-@endsection()
+    <x-base-partials.contact></x-base-partials.contact>
+</x-base-layout>
+

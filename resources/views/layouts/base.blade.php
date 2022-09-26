@@ -28,10 +28,10 @@
 </head>
 
 <body>
-    <x-partials.topBar></x-partials.topBar>
-    <x-partials.navBar></x-partials.navBar>
+    <x-base-partials.topBar></x-base-partials.topBar>
+    <x-base-partials.navBar></x-base-partials.navBar>
     {{$slot}}
-    <x-partials.footer></x-partials.footer>
+    <x-base-partials.footer></x-base-partials.footer>
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
