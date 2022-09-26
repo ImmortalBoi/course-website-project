@@ -15,7 +15,6 @@ class Student extends Model
         'password',
         'email_verified_at',
         'remember_token',
-        'student_img'
     ];
 
     /**

@@ -1,26 +1,35 @@
 <x-admin-layout>
 
     <div class="flex justify-center border-1 ">
-        <form action="{{Route('courseControl.store')}}" method="post">
+        <form method="POST" action="{{ route('admin.courses.store')}}" enctype= multipart/form-data>
             @csrf
             <div class="mb-3">
-                <label for="computer-name" class="form-label">Course Name</label>
-                <input id="computer-name" name="computer-name" value="" type="text" class="form-control" >
+                <label for="name" class="form-label">Course Name</label>
+                <input id="name" name="name" value="{{old('name')}}" type="text" class="form-control" >
 
             </div>
 
             <div class="mb-3">
-                <label for="computer-origin" class="form-label">Computer Origin</label>
-                <input id="computer-origin" name="computer-origin" value="" type="text" class="form-control">
-                
+                <label for="instructor" class="form-label">instructor</label>
+                <input id="instructor_id" name="instructor_id" value="{{old('instructor_id')}}" type="text" class="form-control">
+
             </div>
 
             <div class="mb-3">
-                <label for="computer-price" class="form-label">Computer Price</label>
-                <input id="computer-price" name="computer-price" value="" type="text" class="form-control ">
-
+                <label for="image" class="form-label">Course Image</label>
+                <input id="image" name="image" type="file" class="form-control">
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+
+            <div class="mb-3">
+                <label for="price" class="form-label">Course Price</label>
+                <input id="price" name="price" value="{{old('price')}}" type="text" class="form-control">
+            </div>
+
+            <div class="mb-3">
+                <label for="description" class="form-label">Course Description</label>
+                <textarea id="description" name="description" class="form-control"></textarea>
+            </div>
+            <button type="submit" name="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>
 
