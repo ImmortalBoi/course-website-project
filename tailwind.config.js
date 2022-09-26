@@ -11,8 +11,11 @@ module.exports = {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['Nunito', ...defaultTheme.fontFamily.sans],
+                sans: ['Jost', ...defaultTheme.fontFamily.sans],
             },
+            colors:{
+                'topbar':'#120F2D'
+            }
         },
     },
 

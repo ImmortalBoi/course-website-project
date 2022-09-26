@@ -1,14 +1,13 @@
-@extends('head')
-@section('content')
+<x-base-layout>
     <!-- Header Start -->
     <div class="jumbotron jumbotron-fluid position-relative overlay-bottom" style="margin-bottom: 90px;">
         <div class="container text-center my-5 py-5">
             <h1 class="text-white mt-4 mb-4">Learn From Home</h1>
             <h1 class="text-white display-1 mb-5">Education Courses</h1>
-            <div class="mx-auto mb-5" style="width: 100%; max-width: 600px;">
+            <div class="mx-base-partialsauto mb-5" style="width: 100%; max-base-partialswidth: 600px;">
                 <div class="input-group">
                     <div class="input-group-prepend">
-                        <button class="btn btn-outline-light bg-white text-body px-4 dropdown-toggle" type="button" data-toggle="dropdown"
+                        <button class="btn btn-outline-light bg-white text-body px-base-partials4 dropdown-toggle" type="button" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">Courses</button>
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="#">Courses 1</a>
@@ -18,17 +17,17 @@
                     </div>
                     <input type="text" class="form-control border-light" style="padding: 30px 25px;" placeholder="Keyword">
                     <div class="input-group-append">
-                        <button class="btn btn-secondary px-4 px-lg-5">Search</button>
+                        <button class="btn btn-secondary px-base-partials4 px-base-partialslg-5">Search</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <!-- Header End -->
-    <x-about></x-about>
-    <x-feature></x-feature>
-    <x-course></x-course>
-    <x-team></x-team>
-    <x-testimonial></x-testimonial>
-    <x-contact></x-contact>
-@endsection()
+    <x-base-partials.about></x-base-partials.about>
+    <x-base-partials.feature></x-base-partials.feature>
+    <x-base-partials.course></x-base-partials.course>
+    <x-base-partials.team></x-base-partials.team>
+    <x-base-partials.testimonial></x-base-partials.testimonial>
+    <x-base-partials.contact></x-base-partials.contact>
+</x-base-layout>
