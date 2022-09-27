@@ -17,9 +17,9 @@ class StudentFactory extends Factory
     public function definition()
     {
         return [
-            'student_name' => fake()->name(),
-            'student_email' => fake()->unique()->safeEmail(),
-            'student_password' => fake()->password
+            'student_name' => '',
+            'student_email' => '',
+            'student_password' => ''
         ];
     }
 }
