@@ -17,9 +17,8 @@ return new class extends Migration
             $table->id('instructor_id');
             $table->string('instructor_name')->nullable(false);
             $table->string('instructor_email')->unique()->nullable(false);
-            $table->string('instructor_password')->nullable(false);
-            $table->binary('instructor_img');
-            $table->timestamps(0);
+            $table->string('instructor_img')->nullable();
+            $table->timestamp('created_at');
         });
     }
 
