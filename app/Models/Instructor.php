@@ -12,7 +12,6 @@ class Instructor extends Model
     protected $fillable = [
         'instructor_name',
         'instructor_email',
-        'instructor_password',
         'instructor_img',
         'remember_token',
     ];

@@ -48,7 +48,7 @@
                     @foreach ($instructors as $instructor)
                         <div class="grid grid-cols-3 gap-4">
                         <div class="team-item ">
-                            <img class="max-w-full h-auto w-full" src="{{ Storage::url($instructor->image) }}" alt="1">
+                            <img class="max-w-full h-auto w-full" src="{{ Storage::url($instructor->image) }}" >
                             <div class="bg-gray-100 text-center p-6">
                                 <h5 class="mb-3">{{ $instructor->instructor_name }}</h5>
                                 <h5 class="mb-3">{{ $instructor->instructor_email }}</h5>
