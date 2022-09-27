@@ -1,7 +1,5 @@
 <x-admin-layout>
 
-<section>
-
     <!-- Courses Start -->
     <div class="container mx-auto sm:px-4 max-w-full mx-auto sm:px-4 py-5">
         <div class="container mx-auto sm:px-4 ">
@@ -75,6 +73,5 @@
 
     <!-- Template Javascript -->
     <script src="{{ URL::to('/') }}/js/main.js"></script>
-</section>
 </x-admin-layout>
 

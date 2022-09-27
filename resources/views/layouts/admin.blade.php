@@ -71,11 +71,6 @@
             <main class="m-2 p-8 w-full max-w-5xl">
                 {{$slot}}
 
-            <main class="m-2 p-8">
-                <div class="container">
-                    {{$slot}}
-                </div>
-            </main>
         </div>
 
     {{-- <script src="{{ URL::to('/') }}/js/app.js" ></script> --}}
