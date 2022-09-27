@@ -38,8 +38,20 @@ class CourseController extends Controller
     }
 
 
-    public function show($id){}
+    public function show($id){
+        $target =Course::findOrFail($id);
+        if(!isset($target))
+            abort(404);
+
+        return view('admin.courses.show',['course' => $target]);
+    }
+
     public function edit($id){}
     public function update(Request $request, $id){}
-    public function destroy($id){}
+
+    public function destroy($id){
+        $delete=Course::findOrFail($id);
+        $delete->delete();
+        return redirect()->Route('admin.courses.index');
+    }
 }

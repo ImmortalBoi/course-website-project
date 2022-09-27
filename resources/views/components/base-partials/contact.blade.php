@@ -39,7 +39,7 @@
                     <h1 class="display-4">Send Us A Message</h1>
                 </div>
                 <div class="contact-form">
-                    <form method="POST" action="/contact">
+                    <form method="POST" action="{{route('contact.store')}}">
                         @csrf
                         <div class="row">
                             <div class="col-6 form-group">

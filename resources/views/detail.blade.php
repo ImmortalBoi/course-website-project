@@ -1,4 +1,5 @@
 <x-base-layout>
+
     <!-- Header Start -->
     <div class="jumbotron jumbotron-fluid page-header position-relative overlay-bottom" style="margin-bottom: 90px;">
         <div class="container text-center py-5">
@@ -34,6 +35,7 @@
         <div class="container py-5">
             <div class="row">
                 <div class="col-lg-8">
+                    {{-- Photo and lorem --}}
                     <div class="mb-5">
                         <div class="section-title position-relative mb-5">
                             <h6 class="d-inline-block position-relative text-secondary text-uppercase pb-2">Course Detail</h6>
@@ -48,7 +50,9 @@
                             gubergren dolores et, consetetur justo invidunt at et aliquyam ut et vero clita. Diam sea
                             sea no sed dolores diam nonumy, gubergren sit stet no diam kasd vero.</p>
                     </div>
+                    {{--End Photo and lorem --}}
 
+                    {{-- Related Courses --}}
                     <h2 class="mb-3">Related Courses</h2>
                     <div class="owl-carousel related-carousel position-relative" style="padding: 0 30px;">
                         <a class="courses-list-item position-relative d-block overflow-hidden mb-2" href="{{ URL::to('/') }}/detail">
@@ -94,9 +98,12 @@
                             </div>
                         </a>
                     </div>
+                    {{--End Related Courses --}}
                 </div>
 
                 <div class="col-lg-4 mt-5 mt-lg-0">
+
+                    {{-- Course Details --}}
                     <div class="bg-primary mb-5 py-3">
                         <h3 class="text-white py-3 px-4 m-0">Course Features</h3>
                         <div class="d-flex justify-content-between border-bottom px-4">
@@ -128,7 +135,9 @@
                             <a class="btn btn-block btn-secondary py-3 px-5" href="{{ URL::to('/') }}/">Enroll Now</a>
                         </div>
                     </div>
+                    {{--End Course Details --}}
 
+                    {{-- categories --}}
                     <div class="mb-5">
                         <h2 class="mb-3">Categories</h2>
                         <ul class="list-group list-group-flush">
@@ -154,7 +163,9 @@
                             </li>
                         </ul>
                     </div>
+                    {{-- End categories --}}
 
+                    {{-- Recent Courses --}}
                     <div class="mb-5">
                         <h2 class="mb-4">Recent Courses</h2>
                         <a class="d-flex align-items-center text-decoration-none mb-4" href="{{ URL::to('/') }}/">
@@ -198,10 +209,12 @@
                             </div>
                         </a>
                     </div>
+                    {{--End Recent Courses --}}
                 </div>
             </div>
         </div>
     </div>
     <!-- Detail End -->
+
 </x-base-layout>
 
