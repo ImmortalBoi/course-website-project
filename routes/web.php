@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\CourseController;
@@ -15,11 +16,8 @@ Route::get('/about', function () {
     return view('about');
 });
 
-Route::get('/contact', function () {
-    return view('contact');
-});
-
-Route::post('/contact',[contactController::class,'store']);
+Route::resource('/contact', ContactController::class);
+Route::get('/contact/messages', [ContactController::class,'messages'])->name('messages');
 
 Route::get('/course/{id}', function () {
     return view('detail');

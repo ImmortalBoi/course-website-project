@@ -16,8 +16,8 @@
                 <div class="flex flex-wrap ">
                     @foreach ($courses as $course)
                     <div class="lg:w-1/3 pr-4 pl-4 md:w-1/2 pr-4 pl-4 pb-4">
-                        <a class="courses-list-item relative block overflow-hidden mb-2" href="detail.html">
-                            <img class="max-w-full h-auto w-18 h-18" src="{{Storage::url($course->image)}}">
+                        <a class="courses-list-item relative block overflow-hidden mb-2" href="{{ Route('admin.courses.show',$course->id ) }}">
+                            <img class="max-w-full h-auto w-18 h-18" src="{{Storage::url($course->course_img)}}">
                             <div class="courses-text">
                                 <h4 class="text-center text-white px-3">{{$course->course_name}}</h4>
                                 <div class="border-t w-full mt-3">
@@ -56,7 +56,7 @@
                 </div>
 
             @else
-                <h3 class="text-center text-black px-3">No Instructors Available</h3>
+                <h3 class="text-center text-black px-3">No Courses Available</h3>
             @endif
 
         </div>
