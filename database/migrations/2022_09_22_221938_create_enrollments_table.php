@@ -16,8 +16,8 @@ return new class extends Migration
         Schema::create('enrollments', function (Blueprint $table) {
             $table->id('enrollment_id');
             $table->foreignId('student_id')->references('student_id')->on('students');
-            $table->foreignId('instructor_id')->references('instructor_id')->on('instructors');
-            $table->timestamps();
+            $table->foreignId('course_id')->references('course_id')->on('courses');
+            $table->timestamps(0);
         });
     }
 

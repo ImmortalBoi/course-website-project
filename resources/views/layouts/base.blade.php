@@ -28,10 +28,10 @@
 </head>
 
 <body>
-    <x-topBar></x-topBar>
-    <x-navBar></x-navBar>
-    @yield('content')
-    <x-footer></x-footer>
+    <x-base-partials.topBar></x-base-partials.topBar>
+    <x-base-partials.navBar></x-base-partials.navBar>
+    {{$slot}}
+    <x-base-partials.footer></x-base-partials.footer>
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
