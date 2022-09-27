@@ -7,7 +7,6 @@
 
     <section>
 
-
         <div class="container mx-auto sm:px-4 max-w-full mx-auto sm:px-4 py-5">
             <div class="container mx-auto sm:px-4 py-5">
                 <div class="section-title text-center relative mb-5">
@@ -20,7 +19,7 @@
                     <div class="grid grid-cols-3 gap-4">
                     @foreach ($instructors as $instructor)
 
-                        <div class="team-item ">
+                        <div class="team-item overflow-auto">
                             <img class="max-w-full h-auto w-full" src="{{ Storage::url($instructor->instructor_img) }}">
                             <div class="bg-gray-100 text-center p-6">
                                 <h5 class="mb-3">{{ $instructor->instructor_name }}</h5>

@@ -1,6 +1,6 @@
 <x-admin-layout>
 
-    <div >
+    <div class="container mx-auto sm:px-4 max-w-full mx-auto sm:px-4 py-5">
         <form method="POST" action="{{ route('admin.instructors.store')}}" enctype= multipart/form-data class="flex flex-col">
             @csrf
             <div class="mb-6">
