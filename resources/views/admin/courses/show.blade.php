@@ -50,7 +50,11 @@
                         <h5 class="text-white py-3 px-4 m-0">Course Price: ${{$course->course_price}}</h5>
                         <div class="py-3 px-4">
                             <a class="btn btn-block btn-secondary py-3 px-5" href="{{ URL::to('/') }}/">Edit</a>
-                            <a class="btn btn-block btn-danger py-3 px-5" href="{{ URL::to('/') }}/">Delete</a>
+                            <form action="{{ Route('admin.courses.destroy',['course' => $course->id])}}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button class="btn btn-danger" type="submit">Delete</button>
+                            </form>
                         </div>
                     </div>
                     {{--End Course Details --}}
