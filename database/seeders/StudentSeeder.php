@@ -5,9 +5,9 @@ namespace Database\Seeders;
 use App\Models\User;
 use Illuminate\Support\Str;
 use Illuminate\Database\Seeder;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use \App\Models\Student;
 
-class Student extends Seeder
+class StudentSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -24,5 +24,14 @@ class Student extends Seeder
             'remember_token' => Str::random(10),
             'is_student'=>1,
         ]);
+        User::factory()->count(10)->create([
+            'is_student' => 1
+        ])->each(function (User $user){
+           Student::factory()->create([
+               'student_name' => $user['name'],
+               'student_email' => $user['email'],
+               'student_password' => $user['password']
+           ]);
+        });
     }
 }

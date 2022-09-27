@@ -16,11 +16,16 @@ return new class extends Migration
         Schema::create('courses', function (Blueprint $table) {
             $table->id();
             $table->string('course_name')->nullable(false);
-            $table->foreignId('instructor_id')->references('instructor_id')->on('instructors');
+            $table->foreignId('instructor_id')->references('id')->on('instructors');
             $table->string('course_img');
             $table->integer('course_price');
+            $table->float('course_rate');
+            $table->integer('course_lectures');
+            $table->string('course_language');
             $table->longText('course_description');
-            $table->timestamps(0);
+            $table->enum('course_level',['All levels','Beginner','Intermediate','Expert']);
+            $table->float('course_duration');
+            $table->timestamps();
         });
     }
 
