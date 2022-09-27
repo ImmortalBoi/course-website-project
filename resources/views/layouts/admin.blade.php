@@ -68,11 +68,21 @@
                         </div>
                     </nav>
             </div>
-            <main class="m-2 p-8 w-full max-w-5xl">
-                {{$slot}}
+
+            {{$slot}}
 
         </div>
 
     {{-- <script src="{{ URL::to('/') }}/js/app.js" ></script> --}}
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ URL::to('/') }}/lib/easing/easing.min.js"></script>
+    <script src="{{ URL::to('/') }}/lib/waypoints/waypoints.min.js"></script>
+    <script src="{{ URL::to('/') }}/lib/counterup/counterup.min.js"></script>
+    <script src="{{ URL::to('/') }}/lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="{{ URL::to('/') }}/js/main.js"></script>
     </body>
 </html>
