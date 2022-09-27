@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('admin_name')->nullable(false);
             $table->string('admin_email')->unique()->nullable(false);
             $table->string('admin_password')->nullable(false);
-            $table->timestamps(0);
+            $table->timestamps();
         });
     }
 

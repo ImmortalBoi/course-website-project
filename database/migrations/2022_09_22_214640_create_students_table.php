@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('student_email')->unique()->nullable(false);
             $table->string('student_password')->nullable(false);
             $table->string('student_img')->nullable();
-            $table->timestamps(0);
+            $table->timestamps();
         });
     }
 

@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('course_img');
             $table->integer('course_price');
             $table->longText('course_description');
-            $table->timestamps(0);
+            $table->timestamps();
         });
     }
 
