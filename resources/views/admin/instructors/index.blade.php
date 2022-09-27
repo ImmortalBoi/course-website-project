@@ -44,15 +44,14 @@
                     </div>
                 </div>
                 @if (count($instructors)>0)
-
+                    <div class="grid grid-cols-3 gap-4">
                     @foreach ($instructors as $instructor)
-                        <div class="grid grid-cols-3 gap-4">
+
                         <div class="team-item ">
-                            <img class="max-w-full h-auto w-full" src="{{ Storage::url($instructor->image) }}" >
+                            <img class="max-w-full h-auto w-full" src="{{ Storage::url($instructor->instructor_img) }}">
                             <div class="bg-gray-100 text-center p-6">
                                 <h5 class="mb-3">{{ $instructor->instructor_name }}</h5>
                                 <h5 class="mb-3">{{ $instructor->instructor_email }}</h5>
-                                <p>{{ Storage::url($instructor->image) }}</p>
                                 <p class="mb-2">Web Design & Development</p>
                                 <div class="flex justify-center">
                                     <a class="mx-1 p-1" href="#"><i class="fab fa-twitter"></i></a>
@@ -63,8 +62,9 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+
                     @endforeach
+                    </div>
                 @else
                     <h3 class="text-center text-black px-3">No Instructors Available</h3>
                 @endif
