@@ -1,44 +1,29 @@
 <x-admin-layout>
 
 <section>
-    <!-- Favicon -->
-    <link href="{{ URL::to('/') }}/img/favicon.ico" rel="icon">
-
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-
-    <!-- Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-
-    <!-- Libraries Stylesheet -->
-    <link href="{{ URL::to('/') }}/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="{{ URL::to('/') }}/css/style.css" rel="stylesheet">
-
 
     <!-- Courses Start -->
-    <div class="container-fluid ">
-        <div class="container ">
-            <div class="row mx-0 justify-content-center">
-                <div class="col-lg-8">
-                    <div class="section-title text-center position-relative mb-5">
-                        <h1 class="display-4">Our Courses</h1>
-                        <a href="{{Route('admin.courses.create')}}" class="btn btn-primary">Add Course</a>
+    <div class="container mx-auto sm:px-4 max-w-full mx-auto sm:px-4 py-5">
+        <div class="container mx-auto sm:px-4 ">
+            <div class="flex flex-wrap  mx-0 justify-center">
+                <div class="section-title text-center relative mb-5">
+                    <h1 class="text-4xl">Our Courses</h1>
+                    <div class="flex justify-center py-3">
+                        <a href="{{Route('admin.courses.create')}}" class="inline-block align-middle text-center select-none border font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline bg-blue-600 text-white hover:bg-blue-600">Add Course</a>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                @if ($courses)
+
+            @if (count($courses)>0)
+                <div class="flex flex-wrap ">
                     @foreach ($courses as $course)
-                    <div class="col-lg-4 col-md-6 pb-4">
-                        <a class="courses-list-item position-relative d-block overflow-hidden mb-2" href="detail.html">
-                            <img class="img-fluid w-18 h-18" src="{{Storage::url($course->image)}}">
+                    <div class="lg:w-1/3 pr-4 pl-4 md:w-1/2 pr-4 pl-4 pb-4">
+                        <a class="courses-list-item relative block overflow-hidden mb-2" href="detail.html">
+                            <img class="max-w-full h-auto w-18 h-18" src="{{Storage::url($course->image)}}">
                             <div class="courses-text">
                                 <h4 class="text-center text-white px-3">{{$course->course_name}}</h4>
-                                <div class="border-top w-100 mt-3">
-                                    <div class="d-flex justify-content-between p-4">
+                                <div class="border-t w-full mt-3">
+                                    <div class="flex justify-between p-6">
                                         <span class="text-white"><i class="fa fa-user mr-2"></i>{{{$course->instructor_id}}}</span>
                                         <span class="text-white"><i class="fa fa-star mr-2"></i>{{rand(3.5,5)}}
                                             <small>{{rand(111,300)}}</small></span>
@@ -49,20 +34,20 @@
                     </div>
                     @endforeach
 
-                    <div class="col-12">
+                    <div class="w-full">
                         <nav aria-label="Page navigation">
-                            <ul class="pagination pagination-lg justify-content-center mb-0">
-                            <li class="page-item disabled">
-                                <a class="page-link rounded-0" href="#" aria-label="Previous">
+                            <ul class="flex list-reset pl-0 rounded text-xl justify-center mb-0">
+                            <li class="page-item opacity-75">
+                                <a class="relative block py-2 px-3 -ml-px leading-normal text-blue bg-white border border-gray-200 no-underline hover:text-blue-800 hover:bg-gray-200 rounded-none" href="#" aria-label="Previous">
                                 <span aria-hidden="true">&laquo;</span>
                                 <span class="sr-only">Previous</span>
                                 </a>
                             </li>
-                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item active"><a class="relative block py-2 px-3 -ml-px leading-normal text-blue bg-white border border-gray-200 no-underline hover:text-blue-800 hover:bg-gray-200" href="#">1</a></li>
+                            <li class="page-item"><a class="relative block py-2 px-3 -ml-px leading-normal text-blue bg-white border border-gray-200 no-underline hover:text-blue-800 hover:bg-gray-200" href="#">2</a></li>
+                            <li class="page-item"><a class="relative block py-2 px-3 -ml-px leading-normal text-blue bg-white border border-gray-200 no-underline hover:text-blue-800 hover:bg-gray-200" href="#">3</a></li>
                             <li class="page-item">
-                                <a class="page-link rounded-0" href="#" aria-label="Next">
+                                <a class="relative block py-2 px-3 -ml-px leading-normal text-blue bg-white border border-gray-200 no-underline hover:text-blue-800 hover:bg-gray-200 rounded-none" href="#" aria-label="Next">
                                 <span aria-hidden="true">&raquo;</span>
                                 <span class="sr-only">Next</span>
                                 </a>
@@ -70,12 +55,12 @@
                             </ul>
                         </nav>
                     </div>
-                {{-- @else
-                <h4 class="text-center text-white px-3">No Courses Available</h4> --}}
+                </div>
 
-                @endif
+            @else
+                <h3 class="text-center text-black px-3">No Instructors Available</h3>
+            @endif
 
-            </div>
         </div>
     </div>
     <!-- Courses End -->

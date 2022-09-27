@@ -1,6 +1,6 @@
 <x-admin-layout>
 
-    <div class="flex justify-center ">
+    <div>
         <form action="{{Route('admin.courses.store')}}" method="POST" enctype= multipart/form-data>
             @csrf
             <div class="mb-6">
