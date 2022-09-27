@@ -12,7 +12,7 @@
             <div class="flex flex-wrap  mx-0 justify-center">
                 <div class="lg:w-2/3 pr-4 pl-4">
                     <div class="section-title text-center relative mb-5">
-                        <h1 class="text-4xl pb-2">Our Courses</h1>
+                        <h1 class="text-4xl">Our Courses</h1>
                         <a href="{{Route('courseControl.create')}}" class="inline-block align-middle text-center select-none border font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline bg-blue-600 text-white hover:bg-blue-600">Add Course</a>
                     </div>
                 </div>

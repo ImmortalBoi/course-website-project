@@ -30,7 +30,7 @@
 
     <body class="font-sans antialiased">
         <div class="flex-col w-full md:flex md:flex-row md:min-h-screen">
-            <div @click.away="open = false" class="flex flex-col flex-shrink-0 w-full text-gray-700 bg-white md:w-64 dark:text-gray-200 dark:bg-topbar" x-data="{ open: false }">
+            <div @click.away="open = false" class="flex flex-col flex-shrink-0 w-full text-gray-700 md:w-64 dark:text-gray-200 bg-topbar " x-data="{ open: false }">
                 <div class="flex flex-row items-center justify-between flex-shrink-0 px-8 py-4">
                     <i class="fa fa-book-reader mr-3"></i>
                     <a href="#" class="text-lg font-semibold tracking-widest text-gray-900 uppercase rounded-lg dark:text-white focus:outline-none focus:shadow-outline">Course Forum</a>
@@ -68,7 +68,7 @@
                         </div>
                     </nav>
             </div>
-            <main class="m-2 p-8">
+            <main class="m-2 p-8 w-full max-w-5xl">
                 {{$slot}}
 
             </main>

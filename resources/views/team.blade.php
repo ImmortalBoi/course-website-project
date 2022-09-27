@@ -28,6 +28,6 @@
         </div>
     </div>
     <!-- Header End -->
-    <x-partials.team></x-partials.team>
+    <x-base-partials.team></x-base-partials.team>
 </x-base-layout>
 

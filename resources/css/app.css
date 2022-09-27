@@ -72,3 +72,76 @@ html {
     font-size: 0.875rem;
     line-height: 1.5;
 }
+
+.team-carousel .owl-nav,
+.related-carousel .owl-nav {
+    position: absolute;
+    width: 100%;
+    height: 60px;
+    top: calc(50% - 30px);
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    z-index: 1;
+}
+
+.team-carousel .owl-nav .owl-prev,
+.team-carousel .owl-nav .owl-next,
+.related-carousel .owl-nav .owl-prev,
+.related-carousel .owl-nav .owl-next {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+    background: #2878EB;
+    font-size: 22px;
+    transition: .5s;
+}
+
+.team-carousel .owl-nav .owl-prev:hover,
+.team-carousel .owl-nav .owl-next:hover,
+.related-carousel .owl-nav .owl-prev:hover,
+.related-carousel .owl-nav .owl-next:hover {
+    background: #F14D5D;
+}
+
+.testimonial-carousel .owl-item img {
+    width: 80px;
+    height: 80px;
+}
+
+.testimonial-carousel .owl-nav {
+    position: absolute;
+    width: 120px;
+    height: 60px;
+    top: 0;
+    right: 0;
+    display: flex;
+    z-index: 1;
+}
+
+.testimonial-carousel .owl-nav .owl-prev,
+.testimonial-carousel .owl-nav .owl-next {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+    background: #2878EB;
+    font-size: 22px;
+    transition: .5s;
+}
+
+.testimonial-carousel .owl-nav .owl-prev,
+.testimonial-carousel .owl-nav .owl-next:hover {
+    background: #F14D5D;
+}
+
+.testimonial-carousel .owl-nav .owl-prev:hover {
+    background: #2878EB;
+}
