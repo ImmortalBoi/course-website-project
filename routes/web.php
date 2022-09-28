@@ -14,6 +14,7 @@ Route::get('/', function () {
 
 Route::post('/darkModeToggle', function () {
     darkModeController::switchMode();
+    return redirect()->back();
 });
 
 Route::get('/about', function () {
@@ -33,6 +34,14 @@ Route::get('/course', function () {
 
 Route::get('/team', function () {
     return view('team');
+});
+
+Route::get('/studentTest', function () {
+    return view('student.index');
+});
+
+Route::get('/studentTest/edit', function () {
+    return view('student.edit');
 });
 
 Route::get('/dashboard', function () {

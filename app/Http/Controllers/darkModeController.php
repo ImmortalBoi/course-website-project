@@ -13,8 +13,9 @@ class darkModeController extends Controller
     public static function switchMode(){
         $value =  session()->get('darkMode', '');
         if($value === ''){
-            return 'dark';
+            session(['darkMode' => 'dark']);
         }
-        return '';
+        session(['darkMode' => '']);
+
     }
 }
