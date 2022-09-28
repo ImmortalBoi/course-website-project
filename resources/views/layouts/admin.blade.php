@@ -14,10 +14,11 @@
 
     $path = Request::path();
 
+    $mode = App\Http\Controllers\darkModeController::getMode();
 ?>
 
 <!DOCTYPE html>
-<html class="dark" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html id="main" class="{{$mode}}" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -84,7 +85,22 @@
                                 </div>
                             </div>
                         </div>
-                        {{-- <button class="switch">Click me</button> --}}
+                        <form method="POST" action="/darkModeToggle" >
+                            <button type="button" id="myBtn" class="mx-2 dark:border shadow-lg shadow-zinc-800 inline-block align-middle text-center select-none font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline bg-sky-200 text-darkblue hover:bg-blue-600  dark:focus:ring-gray-500 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-700 dark:focus:ring-gray-700">Toggle</button>
+                        </form>
+                        <script>
+                            button = document.getElementById("myBtn").addEventListener("click", changeMode);
+
+                            function changeMode() {
+                                currentMode = document.getElementById("main").className;
+                                if (currentMode =="") {
+                                    document.getElementById("main").className = "dark";
+                                }
+                                else{
+                                    document.getElementById("main").className = "";
+                                }
+                            }
+                        </script>
                     </nav>
             </div>
             <main class="m-2 p-8 w-full max-w-5xl">
@@ -92,6 +108,7 @@
             </main>
 
         </div>
+
 
     {{-- <script src="{{ URL::to('/') }}/js/app.js" ></script> --}}
     <!-- JavaScript Libraries -->
