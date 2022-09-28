@@ -11,16 +11,16 @@
                 <div class="section-title text-center relative mb-5">
                     <h1 class="text-4xl drop-shadow-2xl">Our Instructors</h1>
                     <div class="flex justify-center py-3">
-                        <a href="{{ route('admin.instructors.create') }}" class="inline-block align-middle text-center select-none border font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline bg-blue-600 text-white hover:bg-blue-600 drop-shadow-2xl">Add Instructor</a>
+                        <a href="{{ route('admin.instructors.create') }}" class="dark:shadow-lg dark:shadow-zinc-800 inline-block align-middle text-center select-none border font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline bg-blue-600 text-white hover:bg-blue-600  dark:focus:ring-gray-500 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-700 dark:focus:ring-gray-700">Add Instructor</a>
                     </div>
                 </div>
                 @if (count($instructors)>0)
                     <div class="grid grid-cols-3 gap-4">
                     @foreach ($instructors as $instructor)
 
-                        <div class="team-item overflow-auto drop-shadow-2xl bg-white">
-                            <img class="max-w-full h-auto w-full" src="{{ Storage::url($instructor->instructor_img) }}">
-                            <div class="bg-gray-100 text-center p-6">
+                        <div class="team-item overflow-auto drop-shadow-2xl bg-white dark:shadow-lg dark:shadow-zinc-800">
+                            <img class="max-w-full h-auto w-full" src="{{ Storage::url($instructor->instructor_img) }}" onerror="this.src='{{ URL::to('/') }}/img/no-background.jpg';">
+                            <div class="bg-gray-100 text-center p-6 dark:bg-gray-800 dark:border-gray-700">
                                 <h5 class="mb-3">{{ $instructor->instructor_name }}</h5>
                                 <h5 class="mb-3">{{ $instructor->instructor_email }}</h5>
                                 <p class="mb-2">Web Design & Development</p>
@@ -37,7 +37,7 @@
                     @endforeach
                     </div>
                 @else
-                    <h3 class="text-center text-black px-3">No Instructors Available</h3>
+                    <h3 class="text-center text-darkblue dark:text-gray-200 px-3">No Instructors Available</h3>
                 @endif
 
             </div>

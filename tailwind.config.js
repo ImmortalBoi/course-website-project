@@ -2,7 +2,7 @@ const defaultTheme = require('tailwindcss/defaultTheme');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-    darkmode: "class",
+    darkMode: "class",
     content: [
         './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
         './storage/framework/views/*.php',
@@ -15,7 +15,8 @@ module.exports = {
                 sans: ['Jost', ...defaultTheme.fontFamily.sans],
             },
             colors:{
-                'topbar':'#120F2D'
+                'darkblue':'#120F2D',
+                'lightblue':'#2878EB'
             }
         },
     },
