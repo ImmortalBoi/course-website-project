@@ -6,11 +6,15 @@ use App\Http\Controllers\StudentController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\CourseController;
 use App\Http\Controllers\Admin\InstructorController;
-
+use App\Http\Controllers\darkModeController;
 
 Route::get('/', function () {
     return view('index');
 })->name('main');
+
+Route::post('/darkModeToggle', function () {
+    darkModeController::switchMode();
+});
 
 Route::get('/about', function () {
     return view('about');

@@ -85,15 +85,14 @@
                                 </div>
                             </div>
                         </div>
-
-                        <label id="myBtn" for="default-toggle" class="inline-flex relative items-center cursor-pointer">
-                            <input type="checkbox" value="" id="default-toggle" class="sr-only peer">
-                            <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
-                        </label>
+                        <form method="POST" action="/darkModeToggle" >
+                            <button type="button" id="myBtn" class="mx-2 dark:border shadow-lg shadow-zinc-800 inline-block align-middle text-center select-none font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline bg-sky-200 text-darkblue hover:bg-blue-600  dark:focus:ring-gray-500 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-700 dark:focus:ring-gray-700">Toggle</button>
+                        </form>
                         <script>
-                            button = document.getElementById("myBtn").addEventListener("click", changeMode);;
+                            button = document.getElementById("myBtn").addEventListener("click", changeMode);
+
                             function changeMode() {
-                                currentMode = document.getElementById("main").innerHTML;
+                                currentMode = document.getElementById("main").className;
                                 if (currentMode =="") {
                                     document.getElementById("main").className = "dark";
                                 }
@@ -109,6 +108,7 @@
             </main>
 
         </div>
+
 
     {{-- <script src="{{ URL::to('/') }}/js/app.js" ></script> --}}
     <!-- JavaScript Libraries -->
