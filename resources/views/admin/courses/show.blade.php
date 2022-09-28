@@ -25,32 +25,34 @@
                         <h3 class="text-white py-3 px-4 m-0">Course Features</h3>
                         <div class="d-flex justify-content-between border-bottom px-4">
                             <h6 class="text-white my-3">Instructor</h6>
-                            <h6 class="text-white my-3">John Doe</h6>
+                            <h6 class="text-white my-3">{{$instructor->instructor_name}}</h6>
                         </div>
                         <div class="d-flex justify-content-between border-bottom px-4">
                             <h6 class="text-white my-3">Rating</h6>
-                            <h6 class="text-white my-3">4.5 <small>(250)</small></h6>
+                            <h6 class="text-white my-3">{{$course->course_rate}}</h6>
                         </div>
                         <div class="d-flex justify-content-between border-bottom px-4">
                             <h6 class="text-white my-3">Lectures</h6>
-                            <h6 class="text-white my-3">15</h6>
+                            <h6 class="text-white my-3">{{$course->course_lectures}}</h6>
                         </div>
                         <div class="d-flex justify-content-between border-bottom px-4">
                             <h6 class="text-white my-3">Duration</h6>
-                            <h6 class="text-white my-3">10.00 Hrs</h6>
+                            <h6 class="text-white my-3">{{$course->course_duration}}Hrs</h6>
                         </div>
                         <div class="d-flex justify-content-between border-bottom px-4">
                             <h6 class="text-white my-3">Skill level</h6>
-                            <h6 class="text-white my-3">All Level</h6>
+                            <h6 class="text-white my-3">{{$course->course_level}}</h6>
                         </div>
                         <div class="d-flex justify-content-between px-4">
                             <h6 class="text-white my-3">Language</h6>
-                            <h6 class="text-white my-3">English</h6>
+                            <h6 class="text-white my-3">{{$course->course_language}}</h6>
                         </div>
                         <h5 class="text-white py-3 px-4 m-0">Course Price: ${{$course->course_price}}</h5>
                         <div class="py-3 px-4">
-                            <a class="btn btn-block btn-secondary py-3 px-5" href="{{ URL::to('/') }}/">Edit</a>
-                            <form action="{{ Route('admin.courses.destroy',['course' => $course->id])}}" method="POST">
+                            <a class="btn btn-block btn-secondary py-3 px-5" href="{{Route('admin.courses.edit',['course' => $course->id]) }}"">Edit</a>
+                            <form action="{{ Route('admin.courses.destroy',['course' => $course->id])}}"
+                                 method="POST"
+                                 onsubmit="return confirm('Are You Sure?');">
                                 @csrf
                                 @method('DELETE')
                                 <button class="btn btn-danger" type="submit">Delete</button>

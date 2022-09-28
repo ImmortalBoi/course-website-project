@@ -19,7 +19,7 @@ return new class extends Migration
             $table->foreignId('instructor_id')->references('id')->on('instructors');
             $table->string('course_img');
             $table->integer('course_price');
-            $table->float('course_rate');
+            $table->float('course_rate')->nullable();
             $table->integer('course_lectures');
             $table->string('course_language');
             $table->longText('course_description');
