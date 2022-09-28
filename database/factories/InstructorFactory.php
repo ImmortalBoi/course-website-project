@@ -19,7 +19,8 @@ class InstructorFactory extends Factory
         return [
             'instructor_name' => fake()->name(),
             'instructor_email' => fake()->unique()->safeEmail(),
-            'instructor_img' => 'public/instructors/JYXAJlHHhApLHEGYJVsn5ksRDoVhFMaSdB6Pjdza.jpg'
+            'instructor_img' => 'public/instructors/JYXAJlHHhApLHEGYJVsn5ksRDoVhFMaSdB6Pjdza.jpg',
+            'instructor_job_title' => fake()->jobTitle()
         ];
     }
 }
