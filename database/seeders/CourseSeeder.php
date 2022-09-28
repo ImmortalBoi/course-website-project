@@ -17,8 +17,10 @@ class CourseSeeder extends Seeder
     {
         for ($i = 0;$i < 10;$i++) {
             $randinstructorid = DB::table('instructors')->pluck('id')->random();
+            $randCategoryid = DB::table('categories')->pluck('id')->random();
             Course::factory()->create([
                 'instructor_id' => $randinstructorid,
+                'category_id' => $randCategoryid
             ]);
         }
     }
