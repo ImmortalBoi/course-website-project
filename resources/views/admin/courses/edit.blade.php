@@ -1,21 +1,21 @@
+@section('title','Edit Course')
 <x-admin-layout>
 
     <div>
-        <form action="{{Route('admin.courses.update',['course' =>$course->id])}}" method="POST" enctype= multipart/form-data>
+        <form action="{{Route('admin.courses.update',['course' =>$course->id])}}" method="POST" enctype= multipart/form-data class="flex flex-col">
             @csrf @method('PUT')
-            <?php $name = DB::select('select instructor_name , id from instructors where id ='.$course->instructor_id); ?>
             
             <div class="mb-6">
-                <label for="name" class="block mb-2 text-lg font-medium text-gray-900">Course Name: </label>
-                <input id="name" name="name" value="{{$course->course_name}}" type="text" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-topbar dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" >
+                <label for="name" class="block mb-2 text-lg font-medium text-darkblue dark:text-gray-300">Course Name: </label>
+                <input id="name" name="name" value="{{$course->course_name}}" type="text" class="drop-shadow-2xl bg-gray-50 border-2 border-gray-300 text-darkblue dark:text-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" >
                 @error('name')
                        <p class="text-danger"> {{$message}}</p>
                 @enderror
             </div>
 
             <div class="mb-6">
-                <label for="instructor" class="block mb-2 text-lg font-medium text-gray-900">Instructor:</label>
-                <select name="instructor_id" id="instructor_id" class="form-select shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-topbar dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" aria-label="Default select example">
+                <label for="instructor" class="block mb-2 text-lg font-medium text-darkblue dark:text-gray-300">Instructor:</label>
+                <select name="instructor_id" id="instructor_id" class="form-select drop-shadow-2xl bg-gray-50 border-2 border-gray-300 text-darkblue dark:text-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" aria-label="Default select example">
                     <option  selected value="{{$targetInstructor->id}}" >{{$targetInstructor->instructor_name}}</option>
                     @foreach($instructors as $instructor)
                     <option value="{{$instructor->id}}">{{$instructor->instructor_name}}</option>
@@ -27,22 +27,22 @@
             </div>
 
             <div class="mb-6">
-                <label for="lecture" class="block mb-2 text-lg font-medium text-gray-900">Lectures No. :</label>
-                <input id="lecture" name="lecture" value="{{$course->course_lectures}}" type="text" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-topbar dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light">
+                <label for="lecture" class="block mb-2 text-lg font-medium text-darkblue dark:text-gray-300">Lectures No. :</label>
+                <input id="lecture" name="lecture" value="{{$course->course_lectures}}" type="text" class="drop-shadow-2xl bg-gray-50 border-2 border-gray-300 text-darkblue dark:text-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                 @error('lecture')
                        <p class="text-danger"> {{$message}}</p>
                 @enderror
             </div>
             <div class="mb-6">
-                <label for="duration" class="block mb-2 text-lg font-medium text-gray-900">Duration:</label>
-                <input id="duration" name="duration" value="{{$course->course_duration}}" type="text" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-topbar dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light">
+                <label for="duration" class="block mb-2 text-lg font-medium text-darkblue dark:text-gray-300">Duration:</label>
+                <input id="duration" name="duration" value="{{$course->course_duration}}" type="text" class="drop-shadow-2xl bg-gray-50 border-2 border-gray-300 text-darkblue dark:text-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                 @error('duration')
                        <p class="text-danger"> {{$message}}</p>
                 @enderror
             </div>
             <div class="mb-6">
-                <label for="level" class="block mb-2 text-lg font-medium text-gray-900">Skill Level:</label>
-                <select id="level" name="level" class="form-select shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-topbar dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" aria-label="Default select example">
+                <label for="level" class="block mb-2 text-lg font-medium text-darkblue dark:text-gray-300">Skill Level:</label>
+                <select id="level" name="level" class="form-select drop-shadow-2xl bg-gray-50 border-2 border-gray-300 text-darkblue dark:text-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" aria-label="Default select example">
                     <option selected value="{{$course->course_level}}" >{{$course->course_level}}</option>
                     <option value="All levels">All levels</option>
                     <option value="Beginner">Beginner</option>
@@ -54,38 +54,38 @@
                 @enderror
             </div>
             <div class="mb-6">
-                <label for="language" class="block mb-2 text-lg font-medium text-gray-900">Course Language:</label>
-                <input id="language" name="language" value="{{$course->course_language}}" type="text" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-topbar dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light">
+                <label for="language" class="block mb-2 text-lg font-medium text-darkblue dark:text-gray-300">Course Language:</label>
+                <input id="language" name="language" value="{{$course->course_language}}" type="text" class="drop-shadow-2xl bg-gray-50 border-2 border-gray-300 text-darkblue dark:text-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                 @error('language')
                        <p class="text-danger"> {{$message}}</p>
                 @enderror
             </div>
 
             <div class="mb-6">
-                <label for="image" class="block mb-2 text-lg font-medium text-gray-900">Course Image</label>
-                <input id="image" name="image" type="file" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-topbar dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light">
+                <label for="image" class="block mb-2 text-lg font-medium text-darkblue dark:text-gray-300">Course Image</label>
+                <input id="image" name="image" type="file" class="drop-shadow-2xl bg-gray-50 border-2 border-gray-300 text-darkblue dark:text-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                 @error('image')
                        <p class="text-danger"> {{$message}}</p>
                 @enderror
             </div>
 
             <div class="mb-6">
-                <label for="price" class="block mb-2 text-lg font-medium text-gray-900">Course Price</label>
-                <input id="price" name="price" value="{{$course->course_price}}" type="text" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-topbar dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light">
+                <label for="price" class="block mb-2 text-lg font-medium text-darkblue dark:text-gray-300">Course Price</label>
+                <input id="price" name="price" value="{{$course->course_price}}" type="text" class="drop-shadow-2xl bg-gray-50 border-2 border-gray-300 text-darkblue dark:text-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                 @error('price')
                 <p class="text-danger"> {{$message}}</p>
                 @enderror
             </div>
 
             <div class="mb-6">
-                <label for="description" class="block mb-2 text-lg font-medium text-gray-900">Course Description</label>
-                <textarea id="description" name="description" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-topbar dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light">{{$course->course_description}}</textarea>
+                <label for="description" class="block mb-2 text-lg font-medium text-darkblue dark:text-gray-300">Course Description</label>
+                <textarea id="description" name="description" class="drop-shadow-2xl bg-gray-50 border-2 border-gray-300 text-darkblue dark:text-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">{{$course->course_description}}</textarea>
                 @error('description')
                 <p class="text-danger"> {{$message}}</p>
                 @enderror
             </div>
 
-            <button type="submit" name="submit" class="btn btn-warning inline-block align-middle text-center select-none border font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline bg-blue-600 text-white hover:bg-blue-600">Update</button>
+            <button type="submit" name="submit" class="self-end inline-block align-middle text-center select-none border-2 font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline bg-blue-600 text-white hover:bg-blue-600 dark:focus:ring-gray-500 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">Update</button>
         </form>
     </div>
 

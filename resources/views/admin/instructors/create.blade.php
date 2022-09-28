@@ -1,3 +1,4 @@
+@section('title','Add Instructor')
 <x-admin-layout>
 
     <div class="container mx-auto sm:px-4 max-w-full mx-auto sm:px-4 py-5">

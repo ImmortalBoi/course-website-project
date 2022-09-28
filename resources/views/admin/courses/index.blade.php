@@ -1,3 +1,4 @@
+@section('title','Courses')
 <x-admin-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
@@ -19,7 +20,7 @@
                 @if (count($courses)>0)
                     <div class="flex flex-wrap ">
                         @foreach ($courses as $course)
-                        <?php $name = DB::select('select instructor_name from instructors where id ='.$course->instructor_id); ?>
+                        <?php $name = DB::select('select instructor_name from instructors where id ='.$course->instructor_id);?>
                         <div class="lg:w-1/3 pr-4 pl-4 md:w-1/2 pr-4 pl-4 pb-4 drop-shadow-2xl ">
                             <a class="courses-list-item relative block overflow-hidden mb-2 dark:shadow-lg dark:shadow-zinc-800" href="{{ Route('admin.courses.show',$course->id ) }}">
                                 <img class="max-w-full h-auto" src="{{Storage::url($course->course_img)}}" alt="" onerror="this.src='{{ URL::to('/') }}/img/no-background.jpg';">
@@ -27,11 +28,8 @@
                                     <h4 class="text-center text-white px-3 dark:text-gray-200">{{$course->course_name}}</h4>
                                     <div class="border-t w-full mt-3">
                                         <div class="flex flex-row justify-between p-6">
-                                            <span class="text-white block dark:text-gray-200"><i class="fa fa-user mr-2"></i>{{{$course->instructor_id}}}</span>
-                                            <span class="text-white block dark:text-gray-200"><i class="fa fa-star mr-2"></i>{{rand(3.5,5)}}</span>
                                             <span class="text-white block dark:text-gray-200"><i class="fa fa-user mr-2"></i>{{$name[0]->instructor_name}}</span>
                                             <span class="text-white block dark:text-gray-200"><i class="fa fa-star mr-2"></i>{{$course->course_rate}}</span>
-                                                <small class="text-white">({{rand(111,300)}})</small>
                                         </div>
                                     </div>
                                 </div>

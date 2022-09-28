@@ -1,3 +1,4 @@
+@section('title','Course Details')
 <x-admin-layout>
 
     <!-- Detail Start -->
