@@ -27,7 +27,8 @@ class CourseFactory extends Factory
             'course_description' => fake()->text(),
             'course_level' => fake()->randomElement(['All levels','Beginner','Intermediate','Expert']),
             'course_duration' => fake()->randomFloat(2,15,30),
-            'is_active' => fake()->boolean()
+            'is_active' => fake()->boolean(),
+            'category_id' => 0
         ];
     }
 }
