@@ -1,29 +1,26 @@
 <x-admin-layout>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     @if($data)
-
-            <form class="row g-">
+            <form class="flex flex-wrap  g-">
             @foreach ($data as $dt)
-            <div class="container border border-4 w-75 ">
-                <div class="col-md-6">
-                <label for="name" class="form-label">Name</label>
-                <input type="text" class="form-control" id="name" value="{{$dt->name}}" disabled>
+            <div class="container mx-auto sm:px-4 border shadow-xl bg-white w-3/4 mb-6 rounded-lg ">
+                <div class="mb-3 mt-3">
+                    <label for="name" class="form-label m-1">Name:</label>
+                    <input type="text" class="block shadow appearance-none w-full py-1 px-2 mt-1 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded" id="name" value="{{$dt->name}}" disabled>
                 </div>
 
-                <div class="col-md-6">
-                <label for="inputEmail4" class="form-label">Email</label>
-                <input type="email" class="form-control" id="inputEmail4" value="{{$dt->email}}" disabled>
+                <div class="mb-3 mt-3">
+                <label for="inputEmail4" class="form-label">Email:</label>
+                <input type="email" class="block shadow appearance-none w-full py-1 px-2 mt-1 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded" id="inputEmail4" value="{{$dt->email}}" disabled>
                 </div>
 
-                <div class="col-12">
-                <label for="subject" class="form-label">Subject</label>
-                <input type="text" class="form-control" id="subject" value="{{$dt->subject}}" disabled>
+                <div class="mb-3 mt-3">
+                <label for="subject" class="form-label">Subject:</label>
+                <input type="text" class="block shadow appearance-none w-full py-1 px-2 mt-1 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded" id="subject" value="{{$dt->subject}}" disabled>
                 </div>
 
-                <div class="col-12">
-                <label for="inputAddress2" class="form-label">Message</label>
-                <textarea class="form-control" disabled>{{$dt->message}}</textarea>
+                <div class="w-full mb-3 mt-3 h-full">
+                <label for="inputAddress2" class="form-label">Message:</label>
+                <textarea class="block shadow appearance-none w-full py-1 px-2 mt-1 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded" disabled>{{$dt->message}}</textarea>
                 </div>
             </div>
         @endforeach

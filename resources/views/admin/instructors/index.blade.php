@@ -6,20 +6,19 @@
     </x-slot>
 
     <section>
-
         <div class="container mx-auto sm:px-4 max-w-full mx-auto sm:px-4 py-5">
             <div class="container mx-auto sm:px-4 py-5">
                 <div class="section-title text-center relative mb-5">
-                    <h1 class="text-4xl">Our Instructors</h1>
+                    <h1 class="text-4xl drop-shadow-2xl">Our Instructors</h1>
                     <div class="flex justify-center py-3">
-                        <a href="{{ route('admin.instructors.create') }}" class="inline-block align-middle text-center select-none border font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline bg-blue-600 text-white hover:bg-blue-600">Add Instructor</a>
+                        <a href="{{ route('admin.instructors.create') }}" class="inline-block align-middle text-center select-none border font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline bg-blue-600 text-white hover:bg-blue-600 drop-shadow-2xl">Add Instructor</a>
                     </div>
                 </div>
                 @if (count($instructors)>0)
                     <div class="grid grid-cols-3 gap-4">
                     @foreach ($instructors as $instructor)
 
-                        <div class="team-item overflow-auto">
+                        <div class="team-item overflow-auto drop-shadow-2xl bg-white">
                             <img class="max-w-full h-auto w-full" src="{{ Storage::url($instructor->instructor_img) }}">
                             <div class="bg-gray-100 text-center p-6">
                                 <h5 class="mb-3">{{ $instructor->instructor_name }}</h5>

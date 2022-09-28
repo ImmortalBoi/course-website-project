@@ -28,7 +28,7 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
 
-    <body class="font-sans antialiased">
+    <body class="font-sans antialiased bg-slate-200 text-black">
         <div class="flex-col w-full md:flex md:flex-row md:min-h-screen">
             <div @click.away="open = false" class="flex flex-col flex-shrink-0 w-full text-gray-700 md:w-64 dark:text-gray-200 bg-topbar " x-data="{ open: false }">
                 <div class="flex flex-row items-center justify-between flex-shrink-0 px-8 py-4">

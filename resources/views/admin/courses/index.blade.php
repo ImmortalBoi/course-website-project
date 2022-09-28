@@ -15,15 +15,15 @@
             @if (count($courses)>0)
                 <div class="flex flex-wrap ">
                     @foreach ($courses as $course)
-                    <div class="lg:w-1/3 pr-4 pl-4 md:w-1/2 pr-4 pl-4 pb-4">
+                    <div class="lg:w-1/3 pr-4 pl-4 md:w-1/2 pr-4 pl-4 pb-4 drop-shadow-2xl">
                         <a class="courses-list-item relative block overflow-hidden mb-2" href="{{ Route('admin.courses.show',$course->id ) }}">
                             <img class="max-w-full h-auto w-18 h-18" src="{{Storage::url($course->course_img)}}">
                             <div class="courses-text">
-                                <h4 class="text-center text-white px-3">{{$course->course_name}}</h4>
+                                <h4 class="text-center text-black px-3">{{$course->course_name}}</h4>
                                 <div class="border-t w-full mt-3">
                                     <div class="flex justify-between p-6">
-                                        <span class="text-white"><i class="fa fa-user mr-2"></i>{{{$course->instructor_id}}}</span>
-                                        <span class="text-white"><i class="fa fa-star mr-2"></i>{{rand(3.5,5)}}
+                                        <span class="text-black"><i class="fa fa-user mr-2"></i>{{{$course->instructor_id}}}</span>
+                                        <span class="text-black"><i class="fa fa-star mr-2"></i>{{rand(3.5,5)}}
                                             <small>{{rand(111,300)}}</small></span>
                                     </div>
                                 </div>
