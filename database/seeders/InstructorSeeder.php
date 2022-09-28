@@ -18,7 +18,7 @@ class InstructorSeeder extends Seeder
         Instructor::create([
             'instructor_name' => 'instructor',
             'instructor_email' => 'instructor@gmail.com',
-            'instructor_img' => 'public/instructors/JYXAJlHHhApLHEGYJVsn5ksRDoVhFMaSdB6Pjdza.jpg'
+            'instructor_img' => 'public/instructors/RfZv1EC2g8ZQjvRkmHN8CoU9YmVxZ0GJl619gLMl.jpg'
         ]);
         Instructor::factory()->count(10)->create();
     }
