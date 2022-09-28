@@ -14,10 +14,11 @@
 
     $path = Request::path();
 
+    $mode = App\Http\Controllers\darkModeController::getMode();
 ?>
 
 <!DOCTYPE html>
-<html class="dark" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html id="main" class="{{$mode}}" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -84,7 +85,23 @@
                                 </div>
                             </div>
                         </div>
-                        {{-- <button class="switch">Click me</button> --}}
+
+                        <label id="myBtn" for="default-toggle" class="inline-flex relative items-center cursor-pointer">
+                            <input type="checkbox" value="" id="default-toggle" class="sr-only peer">
+                            <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
+                        </label>
+                        <script>
+                            button = document.getElementById("myBtn").addEventListener("click", changeMode);;
+                            function changeMode() {
+                                currentMode = document.getElementById("main").innerHTML;
+                                if (currentMode =="") {
+                                    document.getElementById("main").className = "dark";
+                                }
+                                else{
+                                    document.getElementById("main").className = "";
+                                }
+                            }
+                        </script>
                     </nav>
             </div>
             <main class="m-2 p-8 w-full max-w-5xl">

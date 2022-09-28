@@ -36,6 +36,7 @@ Route::get('/dashboard', function () {
 })->middleware(['auth','admin'])->name('dashboard');
 
 Route::middleware(['auth','admin'])->name('admin.')->prefix('admin')->group(function(){
+
     Route::get('/',[AdminController::class,'index'])->name('index');
     Route::resource('/courses', CourseController::class);
     Route::resource('/instructors', InstructorController::class);

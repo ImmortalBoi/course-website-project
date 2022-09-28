@@ -11,7 +11,7 @@
                 <div class="section-title text-center relative mb-5">
                     <h1 class="text-4xl drop-shadow-2xl">Our Instructors</h1>
                     <div class="flex justify-center py-3">
-                        <a href="{{ route('admin.instructors.create') }}" class="dark:shadow-lg dark:shadow-zinc-800 inline-block align-middle text-center select-none border font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline bg-blue-600 text-white hover:bg-blue-600  dark:focus:ring-gray-500 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-700 dark:focus:ring-gray-700">Add Instructor</a>
+                        <a href="{{ route('admin.instructors.create') }}" class="dark:border shadow-lg shadow-zinc-800 inline-block align-middle text-center select-none font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline bg-blue-600 text-white hover:bg-blue-600  dark:focus:ring-gray-500 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-700 dark:focus:ring-gray-700">Add Instructor</a>
                     </div>
                 </div>
                 @if (count($instructors)>0)
