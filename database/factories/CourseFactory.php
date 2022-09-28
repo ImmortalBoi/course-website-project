@@ -19,7 +19,7 @@ class CourseFactory extends Factory
         return [
             'course_name' => fake()->text(10),
             'instructor_id' => 0,
-            'course_img' => 'public/img/courses-img/Pe0do5R2uMjFOi181DjNUl229PIFHKtnmAEKKgBI.jpg',
+            'course_img' => 'public/img/courses-img/xKqxvHom7oUCUEZZgRhOHwh9HeGQG9zyXf4uP55H.jpg',
             'course_price' => random_int(200,700),
             'course_rate' => fake()->randomFloat(3,3,5),
             'course_lectures' => random_int(10,30),

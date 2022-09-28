@@ -62,6 +62,7 @@
                 </div>
                     <nav :class="{'block': open, 'hidden': !open}" class="flex-grow px-4 pb-4 md:block md:pb-0 md:overflow-y-auto">
                         <a class="{{(strpos($path,"course"))?$selected:$notSelected}}" href="{{Route('admin.courses.index')}}">Courses</a>
+                        <a class="{{(strpos($path,"category"))?$selected:$notSelected}}" href="#">Category</a>
                         <a class="{{(strpos($path,"instructor"))?$selected:$notSelected}}" href="{{Route('admin.instructors.index')}}">Instructors</a>
                         <a class="{{(strpos($path,"about"))?$selected:$notSelected}}" href="#">About</a>
                         <a class="{{(strpos($path,"messages"))?$selected:$notSelected}}" href="{{Route('messages')}}">Contact</a>

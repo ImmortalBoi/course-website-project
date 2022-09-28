@@ -18,7 +18,7 @@
                 <a href="{{ route('login') }}" class="nav-item nav-link">Login</a>
                 @endif
             </div>
-            @if(isset(Auth::user()->is_student) || isset(Auth::user()->is_instructor) || isset(Auth::user()->is_admin) )
+            @if(isset(Auth::user()->is_student) || isset(Auth::user()->is_admin) )
                 @if (Auth::user()->is_student)
                 <a href="#" class="btn btn-primary py-2 px-4 d-none d-lg-block">Profile</a>
                 <form method="POST" action="{{ route('logout') }}">
@@ -31,17 +31,13 @@
                 </form>
                 @endif
 
-                @if (Auth::user()->is_instructor)
-                <a href="#" class="btn btn-primary py-2 px-4 d-none d-lg-block">Dashboard</a>
-                @endif
-
                 @if (Auth::user()->is_admin)
                 <a href="{{Route('admin.index')}}" class="btn btn-primary py-2 px-4 d-none d-lg-block">Dashboard</a>
                 @endif
-            @else
-            <a href="{{ route('register') }}" class="btn btn-primary py-2 px-4 d-none d-lg-block">Join Us</a>
+                @else
+                <a href="{{ route('register') }}" class="btn btn-primary py-2 px-4 d-none d-lg-block nav-item nav-link">Join Us</a>
             @endif
-            </div>
+        </div>
     </nav>
 </div>
 <!-- Navbar End -->
