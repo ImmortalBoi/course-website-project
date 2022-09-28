@@ -18,23 +18,31 @@
                 @if (count($instructors)>0)
                     <div class="grid grid-cols-3 gap-4">
                     @foreach ($instructors as $instructor)
-
-                        <div class="team-item overflow-auto drop-shadow-2xl bg-white dark:shadow-lg dark:shadow-zinc-800">
-                            <img class="max-w-full h-auto w-full" src="{{ Storage::url($instructor->instructor_img) }}" onerror="this.src='{{ URL::to('/') }}/img/no-background.jpg';">
-                            <div class="bg-gray-100 text-center p-6 dark:bg-gray-800 dark:border-gray-700">
-                                <h5 class="mb-3">{{ $instructor->instructor_name }}</h5>
-                                <h5 class="mb-3">{{ $instructor->instructor_email }}</h5>
-                                <p class="mb-2">Web Design & Development</p>
-                                <div class="flex justify-center">
-                                    <a class="mx-1 p-1" href="#"><i class="fab fa-twitter"></i></a>
-                                    <a class="mx-1 p-1" href="#"><i class="fab fa-facebook-f"></i></a>
-                                    <a class="mx-1 p-1" href="#"><i class="fab fa-linkedin-in"></i></a>
-                                    <a class="mx-1 p-1" href="#"><i class="fab fa-instagram"></i></a>
-                                    <a class="mx-1 p-1" href="#"><i class="fab fa-youtube"></i></a>
-                                </div>
+                    <div class="team-item overflow-auto drop-shadow-2xl bg-white dark:shadow-lg dark:shadow-zinc-800">
+                        <img class="max-w-full h-auto w-full" src="{{ Storage::url($instructor->instructor_img) }}" onerror="this.src='{{ URL::to('/') }}/img/no-background.jpg';">
+                        <div class="bg-gray-100 text-center p-6 dark:bg-gray-800 dark:border-gray-700">
+                            <h5 class="mb-3">{{ $instructor->instructor_name }}</h5>
+                            <h5 class="mb-3">{{ $instructor->instructor_email }}</h5>
+                            <p class="mb-2">Web Design & Development</p>
+                            <div class="flex justify-center">
+                                <a class="mx-1 p-1" href="#"><i class="fab fa-twitter"></i></a>
+                                <a class="mx-1 p-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a class="mx-1 p-1" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a class="mx-1 p-1" href="#"><i class="fab fa-instagram"></i></a>
+                                <a class="mx-1 p-1" href="#"><i class="fab fa-youtube"></i></a>
+                            </div>
+                            <div class="grid grid-cols-2 gap-6 ">
+                                <a href="{{Route('admin.instructors.edit',$instructor->id) }}" type="submit" name="submit" class=" btn text-center select-none border-2 font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline bg-blue-600 text-white hover:bg-blue-600 dark:focus:ring-gray-500 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">Edit</a>
+                                <form action="{{ Route('admin.instructors.destroy',$instructor->id)}}"
+                                    method="POST"
+                                    onsubmit="return confirm('Delete {{$instructor->instructor_name}} Instructor? All Related Courses Will Be Deleted As Well');">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button class="btn   text-center select-none border-2 font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline bg-blue-600 text-white hover:bg-blue-600 dark:focus:ring-gray-500 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700" type="submit">Delete</button>
+                                </form>
                             </div>
                         </div>
-
+                    </div>
                     @endforeach
                     </div>
                 @else

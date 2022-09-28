@@ -50,10 +50,10 @@
                         </div>
                         <h5 class="text-white py-3 px-4 m-0">Course Price: ${{$course->course_price}}</h5>
                         <div class="py-3 px-4">
-                            <a class="btn btn-block btn-secondary py-3 px-5" href="{{Route('admin.courses.edit',['course' => $course->id]) }}"">Edit</a>
+                            <a class="btn btn-block btn-secondary py-3 px-5" href="{{Route('admin.courses.edit',['course' => $course->id]) }}">Edit</a>
                             <form action="{{ Route('admin.courses.destroy',['course' => $course->id])}}"
                                  method="POST"
-                                 onsubmit="return confirm('Are You Sure?');">
+                                 onsubmit="return confirm('Delete {{$course->course_name}} Course?');">
                                 @csrf
                                 @method('DELETE')
                                 <button class="btn btn-danger" type="submit">Delete</button>

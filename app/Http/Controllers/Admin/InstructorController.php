@@ -4,37 +4,24 @@ namespace App\Http\Controllers\Admin;
 
 use App\Models\Instructor;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
 
 class InstructorController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
         $instructors =Instructor::all();
         return view('admin.instructors.index',compact('instructors'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         return view('admin.instructors.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         $image= $request->file('image')->store('public/instructors');
@@ -48,48 +35,47 @@ class InstructorController extends Controller
         return to_route('admin.instructors.index');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
-        //
+        // return view('admin.instructors.show')->with('instructor',Instructor::findOrFail($id));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
-        //
+        return view('admin.instructors.edit')->with('instructor',Instructor::findOrFail($id));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function update(Request $request, $id)
     {
-        //
+        $request ->validate([
+            'name'=> 'required',
+            'email'=> 'required|email',
+            'image' =>'image',
+        ]);
+        $data= Instructor::findOrFail($id);
+        $image = $data->instructor_img;
+
+        if($request->hasFile('image')) {
+            Storage::delete($data->course_img);
+            $image= $request->file('image')->store('public/img/courses-img');
+        }
+        $data->update([
+            'instructor_name' =>$request->name,
+            'instructor_email' =>$request->email,
+            'instructor_img' =>$image,
+        ]);
+        return redirect()->Route('admin.instructors.index');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
-        //
+
+        $delete=Instructor::findOrFail($id);
+        $deleted = DB::table('courses')->where('instructor_id', '=', $id)->delete();
+        $deleteImage =$delete->instructor_img;
+        $delete->delete();
+        Storage::delete($deleteImage);
+        return redirect()->Route('admin.instructors.index');
     }
 }

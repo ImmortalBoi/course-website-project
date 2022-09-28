@@ -6,6 +6,7 @@ use App\Models\Course;
 use App\Models\Instructor;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\CourseStoreRequest;
 
 class CourseController extends Controller
@@ -103,7 +104,9 @@ class CourseController extends Controller
 
     public function destroy($id){
         $delete=Course::findOrFail($id);
+        $deleteImage=$delete->course_img;
         $delete->delete();
+        Storage::delete($deleteImage);
         return redirect()->Route('admin.courses.index');
     }
 }

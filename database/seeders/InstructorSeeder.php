@@ -15,11 +15,11 @@ class InstructorSeeder extends Seeder
      */
     public function run()
     {
-        Instructor::create([
-            'instructor_name' => 'instructor',
-            'instructor_email' => 'instructor@gmail.com',
-            'instructor_img' => 'public/instructors/RfZv1EC2g8ZQjvRkmHN8CoU9YmVxZ0GJl619gLMl.jpg'
-        ]);
+        // Instructor::create([
+        //     'instructor_name' => 'instructor',
+        //     'instructor_email' => 'instructor@gmail.com',
+        //     'instructor_img' => 'public/instructors/V1Y5PssUGoOkszYcOtNO1D8qteFbxbmFZUCM8unz.jpg'
+        // ]);
         Instructor::factory()->count(10)->create();
     }
 }
