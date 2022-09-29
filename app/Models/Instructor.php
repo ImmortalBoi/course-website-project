@@ -13,6 +13,7 @@ class Instructor extends Model
         'instructor_name',
         'instructor_email',
         'instructor_img',
+        'instructor_phone_number',
         'instructor_job_title',
         'remember_token',
     ];

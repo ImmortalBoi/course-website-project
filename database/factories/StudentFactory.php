@@ -19,7 +19,9 @@ class StudentFactory extends Factory
         return [
             'student_name' => '',
             'student_email' => '',
-            'student_password' => ''
+            'student_password' => '',
+            'student_phone_number' => '',
+            'student_education' => fake()->text(10)
         ];
     }
 }
