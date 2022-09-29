@@ -1,3 +1,4 @@
+@section('frontTitle','| Our Instructors')
 <x-base-layout>
     <!-- Header Start -->
     <div class="jumbotron jumbotron-fluid page-header position-relative overlay-bottom" style="margin-bottom: 90px;">

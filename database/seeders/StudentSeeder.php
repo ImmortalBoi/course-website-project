@@ -22,7 +22,13 @@ class StudentSeeder extends Seeder
             'email_verified_at' => now(),
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
             'remember_token' => Str::random(10),
+            'phone_number' => '012345678' ,
             'is_student'=>1,
+        ]);
+        Student::create([
+            'student_name'=>'Student',
+            'student_email'=>'student@gmail.com',
+            'student_password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
         ]);
         User::factory()->count(10)->create([
             'is_student' => 1
@@ -30,7 +36,8 @@ class StudentSeeder extends Seeder
            Student::factory()->create([
                'student_name' => $user['name'],
                'student_email' => $user['email'],
-               'student_password' => $user['password']
+               'student_password' => $user['password'],
+               'student_phone_number' => $user['phone_number']
            ]);
         });
     }

@@ -25,6 +25,8 @@ return new class extends Migration
             $table->longText('course_description');
             $table->enum('course_level',['All levels','Beginner','Intermediate','Expert']);
             $table->float('course_duration');
+            $table->boolean('is_active');
+            $table->integer('category_id')->nullable();
             $table->timestamps();
         });
     }

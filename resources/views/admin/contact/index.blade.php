@@ -1,3 +1,4 @@
+@section('title','Contact')
 <x-admin-layout>
     @if($data)
             <form class="flex flex-wrap ">

@@ -2,11 +2,13 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\contactController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\darkModeController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\CourseController;
+use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\InstructorController;
-use App\Http\Controllers\darkModeController;
 
 Route::get('/', function () {
     return view('index');
@@ -36,11 +38,11 @@ Route::get('/team', function () {
     return view('team');
 });
 
-Route::get('/studentTest', function () {
-    return view('student.index');
-});
+Route::get('/profile',[ProfileController::class,'index'])->name('profile');
+Route::get('/profile/edit/{id}',[ProfileController::class,'edit'])->name('editProflie');
+Route::put('/profile/update/{id}',[ProfileController::class,'update'])->name('updateProfile');
 
-Route::get('/studentTest/edit', function () {
+Route::get('/profile/edit', function () {
     return view('student.edit');
 });
 
@@ -53,6 +55,7 @@ Route::middleware(['auth','admin'])->name('admin.')->prefix('admin')->group(func
     Route::get('/',[AdminController::class,'index'])->name('index');
     Route::resource('/courses', CourseController::class);
     Route::resource('/instructors', InstructorController::class);
+    Route::resource('/categories', CategoryController::class);
 });
 
 Route::get('student',[StudentController::class,'store'])->name('st-store');

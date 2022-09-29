@@ -1,3 +1,4 @@
+@section('title','Course Details')
 <x-admin-layout>
 
     <!-- Detail Start -->
@@ -24,6 +25,14 @@
                     <div class="bg-lightblue mb-5 py-3 shadow-lg shadow-zinc-800 dark:bg-gray-800 dark:border-gray-700" >
                         <h3 class="text-darkblue py-3 px-4 m-0 dark:text-gray-300">Course Features</h3>
                         <div class="flex justify-between border-b px-4">
+                            <h6 class="text-darkblue my-3 dark:text-gray-300">Category</h6>
+                            @if($category)
+                            <h6 class="text-white my-3">{{ $category->category_name }}</h6>
+                            @else
+                            <h6 class="text-white my-3">{{'---'}}</h6>
+                            @endif
+                        </div>
+                        <div class="flex justify-between border-b px-4">
                             <h6 class="text-darkblue my-3 dark:text-gray-300">Instructor</h6>
                             <h6 class="text-white my-3">{{ $instructor->instructor_name }}</h6>
                         </div>
@@ -48,11 +57,22 @@
                             <h6 class="text-white my-3">{{ $course->course_language }}</h6>
                         </div>
                         <h5 class="text-white py-3 px-4 m-0">Course Price: ${{ $course->course_price }}</h5>
+
+                        <div class="flex  px-4">
+                            @if ($course->is_active)
+                                <input type="radio" class="btn-check" name="options-outlined" id="success-outlined" autocomplete="off" checked>
+                                <label class="btn btn-outline-success" for="success-outlined">Active</label>
+                                @else
+                                <input type="radio" class="btn-check" name="options-outlined" id="danger-outlined" autocomplete="off" checked>
+                                <label class="btn btn-outline-danger" for="danger-outlined">Inactive</label>
+
+                            @endif
+                        </div>
                         <div class="py-3 px-4">
-                            <a class="mb-1 inline-block align-middle text-center select-none font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline block w-full bg-gray-600 text-white hover:bg-gray-700 py-3 px-5 shadow-lg shadow-zinc-800"
-                                href="{{ Route('admin.courses.edit', ['course' => $course->id]) }}"">Edit</a>
-                            <form action="{{ Route('admin.courses.destroy', ['course' => $course->id]) }}"
-                                method="POST" onsubmit="return confirm('Are You Sure?');">
+                            <a class="inline-block align-middle text-center select-none font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline bg-yellow-600 text-white hover:bg-yellow-700 bg-white shadow-lg shadow-zinc-800" href="{{Route('admin.courses.edit',['course' => $course->id]) }}">Edit</a>
+                            <form action="{{ Route('admin.courses.destroy',['course' => $course->id])}}"
+                                 method="POST"
+                                 onsubmit="return confirm('Delete {{$course->course_name}} Course?');">
                                 @csrf
                                 @method('DELETE')
                                 <button

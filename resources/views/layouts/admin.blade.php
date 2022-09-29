@@ -26,7 +26,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+        <title>@yield('title')</title>
 
         <!-- Google Web Fonts -->
         <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -64,6 +64,7 @@
                 </div>
                     <nav :class="{'block': open, 'hidden': !open}" class="flex-grow px-4 pb-4 md:block md:pb-0 md:overflow-y-auto">
                         <a class="{{(strpos($path,"course"))?$selected:$notSelected}}" href="{{Route('admin.courses.index')}}">Courses</a>
+                        <a class="{{(strpos($path,"categories"))?$selected:$notSelected}}" href="{{Route('admin.categories.index')}}">Category</a>
                         <a class="{{(strpos($path,"instructor"))?$selected:$notSelected}}" href="{{Route('admin.instructors.index')}}">Instructors</a>
                         <a class="{{(strpos($path,"about"))?$selected:$notSelected}}" href="#">About</a>
                         <a class="{{(strpos($path,"messages"))?$selected:$notSelected}}" href="{{Route('messages')}}">Contact</a>

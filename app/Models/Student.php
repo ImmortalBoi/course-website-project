@@ -13,7 +13,9 @@ class Student extends Model
         'name',
         'email',
         'password',
+        'student_phone_number',
         'email_verified_at',
+        'student_education',
         'remember_token',
     ];
 

@@ -1,3 +1,4 @@
+@section('frontTitle','Login To Course Forum')
 <x-guest-layout>
 
     <x-slot name="logo">
@@ -19,6 +20,14 @@
                             </div>
                             <div class="col-md-6 col-lg-7 d-flex align-items-center">
                                 <div class="card-body p-4 p-lg-5 text-black">
+                                    <div class="Back">
+                                        <button name="BackBtn" type="button" style="color: white;
+                                        padding: 8px 20px;
+                                        border: none;
+                                        border-radius: 4px;
+                                        cursor: pointer;
+                                        display: inline-block; font-size: 16px; float: right; border-radius: 8px; background-color: black;" onclick="history.back()">Back</button>
+                                    </div>
 
                                     <!-- Validation Errors -->
                                     <x-auth-validation-errors class="mb-4" :errors="$errors" />
