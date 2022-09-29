@@ -25,6 +25,7 @@
                 <a class="text-white pl-2" href="">
                     <i class="fab fa-youtube"></i>
                 </a>
+                <a class="text-white pl-2" href="{{ URL::to('/') }}/darkModeToggle">Toggling</a>
             </div>
         </div>
     </div>

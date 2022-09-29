@@ -1,3 +1,4 @@
+@section('frontTitle','| Course Details')
 <x-base-layout>
 
     <!-- Header Start -->

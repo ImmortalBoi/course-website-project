@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('student_password')->nullable(false);
             $table->string('student_phone_number')->nullable();
             $table->string('student_img')->nullable();
-            $table->string('student_education');
+            $table->string('student_education')->nullable();
             $table->timestamps();
         });
     }

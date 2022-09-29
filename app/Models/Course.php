@@ -20,6 +20,7 @@ class Course extends Model
         'course_description',
         'course_level',
         'course_duration',
-        'category_id'
+        'category_id',
+        'is_active'
     ];
 }

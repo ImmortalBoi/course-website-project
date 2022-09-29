@@ -36,7 +36,7 @@ class ContactController extends Controller
     }
 
     public function show (){
-        
+
         $data= Contact::all();
         return view('admin.contact.index',compact('data'));
     }

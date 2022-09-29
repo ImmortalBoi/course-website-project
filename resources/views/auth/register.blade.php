@@ -1,4 +1,4 @@
-
+@section('frontTitle','Register To Course Forum')
 <x-guest-layout>
     <x-slot name="logo">
         <a href="/">
@@ -28,6 +28,15 @@
                     <div class="col-lg-6 mb-5 mb-lg-0">
                         <div class="card">
                             <div class="card-body py-5 px-md-5">
+                                <div class="Back">
+                                    <button name="BackBtn" type="button" style="color: white;
+                                    padding: 8px 20px;
+                                    border: none;
+                                    border-radius: 4px;
+                                    cursor: pointer;
+                                    display: inline-block; font-size: 16px; float: left; border-radius: 8px; background-color: black;" onclick="history.back()">Back</button>
+                                </div>
+                                <br><br><br><br>
                                 <!-- Validation Errors -->
                                 <x-auth-validation-errors class="mb-4" :errors="$errors" />
                                 <form method="POST" action="{{ route('register') }}">
