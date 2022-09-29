@@ -7,6 +7,7 @@ use App\Http\Controllers\StudentController;
 use App\Http\Controllers\darkModeController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\CourseController;
+use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\InstructorController;
 
 Route::get('/', function () {
@@ -54,6 +55,7 @@ Route::middleware(['auth','admin'])->name('admin.')->prefix('admin')->group(func
     Route::get('/',[AdminController::class,'index'])->name('index');
     Route::resource('/courses', CourseController::class);
     Route::resource('/instructors', InstructorController::class);
+    Route::resource('/categories', CategoryController::class);
 });
 
 Route::get('student',[StudentController::class,'store'])->name('st-store');
