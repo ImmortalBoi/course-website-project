@@ -6,6 +6,16 @@
             @csrf @method('PUT')
 
             <div class="mb-6">
+                <label for="active" class="block mb-2 text-lg font-medium text-darkblue dark:text-gray-300" >Active: </label>
+                <select name="active" id="active" class="form-select drop-shadow-2xl bg-gray-50 border-2 border-gray-300 text-darkblue dark:text-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                    <option selected value="{{$course->is_active}}">@if($course->is_active == 1){{'Active'}} @else{{'Inactive'}} @endif</option>
+                    <option value="1">Active</option>
+                    <option value="0">Inactive</option>
+                </select>
+
+            </div>
+
+            <div class="mb-6">
                 <label for="name" class="block mb-2 text-lg font-medium text-darkblue dark:text-gray-300">Course Name: </label>
                 <input id="name" name="name" value="{{$course->course_name}}" type="text" class="drop-shadow-2xl bg-gray-50 border-2 border-gray-300 text-darkblue dark:text-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" >
                 @error('name')
@@ -29,7 +39,7 @@
                     <p class="text-red-600"> {{ $message }}</p>
                 @enderror
             </div>
-            
+
             <div class="mb-6">
                 <label for="instructor" class="block mb-2 text-lg font-medium text-darkblue dark:text-gray-300">Instructor:</label>
                 <select name="instructor_id" id="instructor_id" class="form-select drop-shadow-2xl bg-gray-50 border-2 border-gray-300 text-darkblue dark:text-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" aria-label="Default select example">

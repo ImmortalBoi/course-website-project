@@ -90,6 +90,7 @@ class CourseController extends Controller
             Storage::delete($data->course_img);
             $image= $request->file('image')->store('public/img/courses-img');
         }
+        
         $data->update([
             'course_name' =>$request->name,
             'instructor_id' =>$request->instructor_id,
@@ -101,6 +102,7 @@ class CourseController extends Controller
             'course_price' =>$request->price,
             'course_img' =>$image,
             'category_id' =>$request->category_id,
+            'is_active' =>$request->active,
         ]);
         return redirect()->Route('admin.courses.show',$id);
     }

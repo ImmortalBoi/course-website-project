@@ -57,8 +57,19 @@
                             <h6 class="text-white my-3">{{ $course->course_language }}</h6>
                         </div>
                         <h5 class="text-white py-3 px-4 m-0">Course Price: ${{ $course->course_price }}</h5>
+
+                        <div class="flex  px-4">
+                            @if ($course->is_active)
+                                <input type="radio" class="btn-check" name="options-outlined" id="success-outlined" autocomplete="off" checked>
+                                <label class="btn btn-outline-success" for="success-outlined">Active</label>
+                                @else
+                                <input type="radio" class="btn-check" name="options-outlined" id="danger-outlined" autocomplete="off" checked>
+                                <label class="btn btn-outline-danger" for="danger-outlined">Inactive</label>
+
+                            @endif
+                        </div>
                         <div class="py-3 px-4">
-                            <a class="btn btn-block btn-secondary py-3 px-5" href="{{Route('admin.courses.edit',['course' => $course->id]) }}">Edit</a>
+                            <a class="inline-block align-middle text-center select-none font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline bg-yellow-600 text-white hover:bg-yellow-700 bg-white shadow-lg shadow-zinc-800" href="{{Route('admin.courses.edit',['course' => $course->id]) }}">Edit</a>
                             <form action="{{ Route('admin.courses.destroy',['course' => $course->id])}}"
                                  method="POST"
                                  onsubmit="return confirm('Delete {{$course->course_name}} Course?');">
