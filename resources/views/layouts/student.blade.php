@@ -63,9 +63,9 @@
                     </button>
                 </div>
                     <nav :class="{'block': open, 'hidden': !open}" class="flex-grow px-4 pb-4 md:block md:pb-0 md:overflow-y-auto">
-                        <a class="{{(strpos($path,"main"))?$selected:$notSelected}}" href="{{Route('main')}}">Home</a>
                         <a class="{{(strpos($path,"profile"))?$selected:$notSelected}}" href="{{Route('profile')}}">Profile</a>
                         <a class="{{(strpos($path,"course"))?$selected:$notSelected}}" href="#">Enrolled Courses</a>
+                        <a class="{{(strpos($path,"main"))?$selected:$notSelected}}" href="{{Route('main')}}">Home</a>
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
                             <x-dropdown-link :href="route('logout')"
@@ -75,22 +75,7 @@
                             </x-dropdown-link>
                         </form>
 
-                        <button onclick="" id="myBtn" type="submit" class="m-2 dark:border shadow-lg shadow-zinc-800 inline-block align-middle text-center select-none font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline bg-sky-200 text-darkblue hover:bg-blue-600  dark:focus:ring-gray-500 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-700 dark:focus:ring-gray-700">Toggle</button>
-                        <script>
-                            button = document.getElementById("myBtn").addEventListener("click", changeMode);
-
-                            function changeMode() {
-                                currentMode = document.getElementById("main").className;
-                                if (currentMode =="") {
-                                    document.getElementById("main").className = "dark";
-                                }
-                                else{
-                                    document.getElementById("main").className = "";
-                                }
-                                // let result = "<?php App\Http\Controllers\darkModeController::switchMode(); ?>"
-                                // document.write(result);
-                            }
-                        </script>
+                        <a href="/darkModeToggle" id="myBtn" type="submit" class="m-4 dark:border shadow-lg shadow-zinc-800 inline-block align-middle text-center select-none font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline bg-sky-200 text-darkblue hover:bg-blue-600  dark:focus:ring-gray-500 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-700 dark:focus:ring-gray-700">Toggle</a>
                     </nav>
             </div>
             <main class="m-2 p-8 w-full max-w-5xl">

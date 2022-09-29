@@ -45,6 +45,9 @@
         <!-- Favicon -->
         <link href="{{ URL::to('/') }}/img/favicon.ico" rel="icon">
 
+        <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.3/dist/flowbite.min.css" />
+
+
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
@@ -101,6 +104,7 @@
 
     {{-- <script src="{{ URL::to('/') }}/js/app.js" ></script> --}}
     <!-- JavaScript Libraries -->
+    <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
     <script src="{{ URL::to('/') }}/lib/easing/easing.min.js"></script>
