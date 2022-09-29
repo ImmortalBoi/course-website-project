@@ -13,9 +13,9 @@ Route::get('/', function () {
     return view('index');
 })->name('main');
 
-Route::post('/darkModeToggle', function () {
+Route::get('/darkModeToggle', function () {
     darkModeController::switchMode();
-    return redirect()->back();
+    return back();
 });
 
 Route::get('/about', function () {

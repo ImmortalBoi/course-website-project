@@ -1,3 +1,13 @@
+@php
+    $mode = App\Http\Controllers\darkModeController::getMode();
+    if ($mode === "") {
+        $mode = "bootstrap";
+    }
+    else{
+        $mode = "bootstrap-dark";
+    }
+@endphp
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,6 +20,10 @@
 
     <!-- Favicon -->
     <link href="{{ URL::to('/') }}/img/favicon.ico" rel="icon">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@forevolve/bootstrap-dark@1.0.0/dist/css/toggle-bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@forevolve/bootstrap-dark@1.0.0/dist/css/toggle-bootstrap-dark.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@forevolve/bootstrap-dark@1.0.0/dist/css/toggle-bootstrap-print.min.css" />
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -25,9 +39,10 @@
     <link href="{{ URL::to('/') }}/css/style.css" rel="stylesheet">
 
 
+
 </head>
 
-<body>
+<body class="{{$mode}}">
     <x-base-partials.topBar></x-base-partials.topBar>
     <x-base-partials.navBar></x-base-partials.navBar>
     {{$slot}}
