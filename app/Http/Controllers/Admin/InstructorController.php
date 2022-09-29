@@ -24,11 +24,19 @@ class InstructorController extends Controller
 
     public function store(Request $request)
     {
+        $request->validate([
+            'name' =>'required',
+            'email' =>'required|email',
+            'instructor_job_title' =>'required',
+            'instructor_phone_number' =>'required|integer',
+        ]);
         $image= $request->file('image')->store('public/instructors');
 
         Instructor::create([
             'instructor_name' =>$request->name,
             'instructor_email' =>$request->email,
+            'instructor_job_title' =>$request->jobTitle,
+            'instructor_phone_number' =>$request->phone,
             'instructor_img' =>$image,
         ]);
 
@@ -42,7 +50,8 @@ class InstructorController extends Controller
 
     public function edit($id)
     {
-        return view('admin.instructors.edit')->with('instructor',Instructor::findOrFail($id));
+        $relatedCourses = DB::select('select course_name , id from courses where instructor_id ='.$id);
+        return view('admin.instructors.edit')->with('instructor',Instructor::findOrFail($id))->with('courses',$relatedCourses);
     }
 
 

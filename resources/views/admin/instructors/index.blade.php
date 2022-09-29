@@ -23,7 +23,7 @@
                         <div class="bg-gray-100 text-center p-6 dark:bg-gray-800 dark:border-gray-700">
                             <h5 class="mb-3">{{ $instructor->instructor_name }}</h5>
                             <h5 class="mb-3">{{ $instructor->instructor_email }}</h5>
-                            <p class="mb-2">Web Design & Development</p>
+                            <p class="mb-2">{{$instructor->instructor_job_title}}</p>
                             <div class="flex justify-center">
                                 <a class="mx-1 p-1" href="#"><i class="fab fa-twitter"></i></a>
                                 <a class="mx-1 p-1" href="#"><i class="fab fa-facebook-f"></i></a>
