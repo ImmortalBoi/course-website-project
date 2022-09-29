@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Course;
+use App\Models\Category;
 use App\Models\Instructor;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -20,7 +21,7 @@ class CourseController extends Controller
 
     public function create()
     {
-        return view('admin.courses.create')->with('instructors',Instructor::all());
+        return view('admin.courses.create')->with('instructors',Instructor::all())->with('categories',Category::all());
     }
 
     public function store(CourseStoreRequest $request)
@@ -57,16 +58,16 @@ class CourseController extends Controller
     public function show($id){
         $target =Course::findOrFail($id);
         $instructor= Instructor::findOrFail($target->instructor_id);
-        if(!isset($target))
-            abort(404);
+        $category= Category::find($target->category_id);
 
-        return view('admin.courses.show',['course' => $target,'instructor' =>$instructor]);
+        return view('admin.courses.show',['course' => $target,'instructor' =>$instructor,'category' =>$category]);
     }
 
     public function edit($id){
         $target =Course::findOrFail($id);
         $instructorId =$target->instructor_id;
-        return view('admin.courses.edit')->with('course',Course::findOrFail($id))->with('instructors',Instructor::all())->with('targetInstructor',Instructor::findOrFail($instructorId));
+        $categoryId =$target->category_id;
+        return view('admin.courses.edit')->with('course',Course::findOrFail($id))->with('instructors',Instructor::all())->with('targetInstructor',Instructor::findOrFail($instructorId))->with('recentCategory',Category::find($categoryId))->with('categories',Category::all());
     }
 
     public function update(Request $request, $id){
@@ -79,6 +80,7 @@ class CourseController extends Controller
             'language'=>'required',
             'price'=>'required|integer',
             'description'=>'required',
+            'category_id' =>'required',
             'image' =>'image',
         ]);
         $data=Course::findOrFail($id);
@@ -98,6 +100,7 @@ class CourseController extends Controller
             'course_language' =>$request->language,
             'course_price' =>$request->price,
             'course_img' =>$image,
+            'category_id' =>$request->category_id,
         ]);
         return redirect()->Route('admin.courses.show',$id);
     }

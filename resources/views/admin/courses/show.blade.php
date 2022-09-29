@@ -25,6 +25,14 @@
                     <div class="bg-lightblue mb-5 py-3 shadow-lg shadow-zinc-800 dark:bg-gray-800 dark:border-gray-700" >
                         <h3 class="text-darkblue py-3 px-4 m-0 dark:text-gray-300">Course Features</h3>
                         <div class="flex justify-between border-b px-4">
+                            <h6 class="text-darkblue my-3 dark:text-gray-300">Category</h6>
+                            @if($category)
+                            <h6 class="text-white my-3">{{ $category->category_name }}</h6>
+                            @else
+                            <h6 class="text-white my-3">{{'---'}}</h6>
+                            @endif
+                        </div>
+                        <div class="flex justify-between border-b px-4">
                             <h6 class="text-darkblue my-3 dark:text-gray-300">Instructor</h6>
                             <h6 class="text-white my-3">{{ $instructor->instructor_name }}</h6>
                         </div>
