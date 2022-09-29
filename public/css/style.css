@@ -4450,7 +4450,7 @@ input[type="button"].btn-block {
 }
 
 .navbar-dark .navbar-text {
-  color: rgba(255, 255, 255, 0.5);
+  color: #007bff;
 }
 
 .navbar-dark .navbar-text a {
@@ -6425,13 +6425,13 @@ button.bg-light:focus {
   background-color: #b9d6ff !important;
 }
 
-.bg-dark {
+.bg-darkBlue {
   background-color: #120F2D !important;
 }
 
-a.bg-dark:hover, a.bg-dark:focus,
-button.bg-dark:hover,
-button.bg-dark:focus {
+a.bg-darkBlue:hover, a.bg-darkBlue:focus,
+button.bg-darkBlue:hover,
+button.bg-darkBlue:focus {
   background-color: #030207 !important;
 }
 

@@ -1,5 +1,5 @@
 <!-- Topbar Start -->
-<div class="container-fluid bg-dark">
+<div class="container-fluid bg-darkBlue">
     <div class="row py-2 px-lg-5">
         <div class="col-lg-6 text-center text-lg-left mb-2 mb-lg-0">
             <div class="d-inline-flex align-items-center text-white">
@@ -25,6 +25,7 @@
                 <a class="text-white pl-2" href="">
                     <i class="fab fa-youtube"></i>
                 </a>
+                <a class="text-white pl-2" href="{{ URL::to('/') }}/darkModeToggle">Toggling</a>
             </div>
         </div>
     </div>

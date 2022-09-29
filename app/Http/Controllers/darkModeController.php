@@ -15,7 +15,8 @@ class darkModeController extends Controller
         if($value === ''){
             session(['darkMode' => 'dark']);
         }
-        session(['darkMode' => '']);
-
+        else{
+            session(['darkMode' => '']);
+        }
     }
 }

@@ -1,5 +1,5 @@
 <!-- Footer Start -->
-<div class="container-fluid position-relative overlay-top bg-dark text-white-50 py-5" style="margin-top: 90px;">
+<div class="container-fluid position-relative overlay-top bg-darkBlue text-white-50 py-5" style="margin-top: 90px;">
     <div class="container mt-5 pt-5">
         <div class="row">
             <div class="col-md-6 mb-5">
@@ -56,7 +56,7 @@
         </div>
     </div>
 </div>
-<div class="container-fluid bg-dark text-white-50 border-top py-4" style="border-color: rgba(256, 256, 256, .1) !important;">
+<div class="container-fluid bg-darkBlue text-white-50 border-top py-4" style="border-color: rgba(256, 256, 256, .1) !important;">
     <div class="container">
         <div class="row">
             <div class="col-md-6 text-center text-md-left mb-3 mb-md-0">

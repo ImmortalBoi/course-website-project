@@ -87,22 +87,8 @@
                                 </div>
                             </div>
                         </div>
-                        <button onclick="" id="myBtn" type="submit" class="m-2 dark:border shadow-lg shadow-zinc-800 inline-block align-middle text-center select-none font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline bg-sky-200 text-darkblue hover:bg-blue-600  dark:focus:ring-gray-500 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-700 dark:focus:ring-gray-700">Toggle</button>
-                        <script>
-                            button = document.getElementById("myBtn").addEventListener("click", changeMode);
 
-                            function changeMode() {
-                                currentMode = document.getElementById("main").className;
-                                if (currentMode =="") {
-                                    document.getElementById("main").className = "dark";
-                                }
-                                else{
-                                    document.getElementById("main").className = "";
-                                }
-                                // let result = "<?php App\Http\Controllers\darkModeController::switchMode(); ?>"
-                                // document.write(result);
-                            }
-                        </script>
+                        <a href="/darkModeToggle" id="myBtn" type="submit" class="m-4 dark:border shadow-lg shadow-zinc-800 inline-block align-middle text-center select-none font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline bg-sky-200 text-darkblue hover:bg-blue-600  dark:focus:ring-gray-500 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-700 dark:focus:ring-gray-700">Toggle</a>
                     </nav>
             </div>
             <main class="m-2 p-8 w-full max-w-5xl">
@@ -114,7 +100,6 @@
 
     {{-- <script src="{{ URL::to('/') }}/js/app.js" ></script> --}}
     <!-- JavaScript Libraries -->
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
     <script src="{{ URL::to('/') }}/lib/easing/easing.min.js"></script>
