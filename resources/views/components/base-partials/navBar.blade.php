@@ -20,7 +20,7 @@
             </div>
             @if(isset(Auth::user()->is_student) || isset(Auth::user()->is_admin) )
                 @if (Auth::user()->is_student)
-                <a href="#" class="btn btn-primary py-2 px-4 d-none d-lg-block">Profile</a>
+                <a href="{{Route('profile')}}" class="btn btn-primary py-2 px-4 d-none d-lg-block">Profile</a>
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
                     <x-dropdown-link :href="route('logout')"
