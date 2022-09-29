@@ -1,8 +1,8 @@
 <!-- Navbar Start -->
 <div class="container-fluid p-0">
-    <nav class="navbar navbar-expand-lg bg-white navbar-light py-3 py-lg-0 px-lg-5">
+    <nav class="navbar navbar-expand-lg bg-white navbar-light py-3 py-lg-0 px-lg-5 dark:bg-dark">
         <a href="index.html" class="navbar-brand ml-lg-3">
-            <h1 class="m-0 text-uppercase text-primary"><i class="fa fa-book-reader mr-3"></i>Course Forum</h1>
+            <h1 class="m-0 text-uppercase text-primary dark:text-dark"><i class="fa fa-book-reader mr-3"></i>Course Forum</h1>
         </a>
         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>

@@ -1,10 +1,11 @@
 @php
     $mode = App\Http\Controllers\darkModeController::getMode();
+    $link = "";
     if ($mode === "") {
-        $mode = "bootstrap";
+        $link = "style.css";
     }
     else{
-        $mode = "bootstrap-dark";
+        $link = "bootstrap-dark.css";
     }
 @endphp
 
@@ -21,8 +22,6 @@
     <!-- Favicon -->
     <link href="{{ URL::to('/') }}/img/favicon.ico" rel="icon">
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@forevolve/bootstrap-dark@1.0.0/dist/css/toggle-bootstrap.min.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@forevolve/bootstrap-dark@1.0.0/dist/css/toggle-bootstrap-dark.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@forevolve/bootstrap-dark@1.0.0/dist/css/toggle-bootstrap-print.min.css" />
 
     <!-- Google Web Fonts -->
@@ -36,7 +35,10 @@
     <link href="{{ URL::to('/') }}/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="{{ URL::to('/') }}/css/style.css" rel="stylesheet">
+@php
+
+@endphp
+    <link rel="stylesheet" href="{{ URL::to('/') }}/css/{{$link}}" />
 
 
 
