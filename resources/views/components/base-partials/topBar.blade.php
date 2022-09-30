@@ -25,7 +25,17 @@
                 <a class="text-white pl-2" href="">
                     <i class="fab fa-youtube"></i>
                 </a>
-                <a class="text-white pl-2" href="{{ URL::to('/') }}/darkModeToggle">Toggling</a>
+                |
+                <a class="text-white pl-2" href="{{ URL::to('/') }}/darkModeToggle">
+                    @php
+                        if($mode ==""){
+                            echo "<i class='fa-solid fa-sun'></i>";
+                        }
+                        else{
+                            echo "<i class='fa-solid fa-moon'></i>";
+                        }
+                    @endphp
+                </a>
             </div>
         </div>
     </div>

@@ -61,6 +61,8 @@ class InstructorController extends Controller
         $request ->validate([
             'name'=> 'required',
             'email'=> 'required|email',
+            'jobTitle' =>'required',
+            'phone' =>'required',
             'image' =>'image',
         ]);
         $data= Instructor::findOrFail($id);
@@ -74,6 +76,8 @@ class InstructorController extends Controller
         $data->update([
             'instructor_name' =>$request->name,
             'instructor_email' =>$request->email,
+            'instructor_job_title' =>$request->jobTitle,
+            'instructor_phone_number' =>$request->phone,
             'instructor_img' =>$image,
         ]);
         return redirect()->Route('admin.instructors.index');

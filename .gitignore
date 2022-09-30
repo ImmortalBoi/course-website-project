@@ -15,3 +15,5 @@ yarn-error.log
 /.idea
 /.vscode
 database/factories/CourseFactory.php
+package-lock.json
+package.json

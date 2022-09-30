@@ -6,12 +6,14 @@ use App\Models\Course;
 use App\Models\Category;
 use App\Models\Instructor;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 
 class FrontCourseController extends Controller
 {
     public function index(){
-        return view('course')->with('courses',Course::all());
+        $courses = DB::table('courses')->where('is_active', 1)->get();
+        return view('course')->with('courses',$courses);
     }
 
     public function show($id){
