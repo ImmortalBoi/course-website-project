@@ -37,7 +37,7 @@
         <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
 
         <!-- Font Awesome -->
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet">
 
         <!-- Libraries Stylesheet -->
         <link href="{{ URL::to('/') }}/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
@@ -92,7 +92,15 @@
                             </div>
                         </div>
 
-                        <a href="/darkModeToggle" id="myBtn" type="submit" class="m-4 dark:border shadow-lg shadow-zinc-800 inline-block align-middle text-center select-none font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline bg-sky-200 text-darkblue hover:bg-blue-600  dark:focus:ring-gray-500 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-700 dark:focus:ring-gray-700">Toggle</a>
+                        <a href="/darkModeToggle" id="myBtn" type="submit" class="m-4 dark:border shadow-lg shadow-zinc-800 inline-block align-middle text-center select-none font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline bg-sky-200 text-darkblue hover:bg-blue-600  dark:focus:ring-gray-500 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-700 dark:focus:ring-gray-700">
+                            @php
+                            if($mode ==""){
+                                echo "<i class='fa-solid fa-sun'></i>";
+                            }
+                            else{
+                                echo "<i class='fa-solid fa-moon'></i>";
+                            }
+                        @endphp</a>
                     </nav>
             </div>
             <main class="my-5 mx-auto lg:mx-20 px-2 2xl:mx-auto w-full max-w-5xl">
