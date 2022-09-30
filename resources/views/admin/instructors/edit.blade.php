@@ -36,30 +36,23 @@
                 <ul class="list-group list-group-flush">
                     @if ($courses)
                         @foreach ($courses as $course)
-                            <li class="list-group-item d-flex justify-content-between align-items-start">
-                                <div>
-                                    {{$course->course_name}}
-                                </div>
-                                <div class="btn-group btn-group-sm" role="group">
-                                    <a class="btn btn-info" href="{{Route('admin.courses.show',$course->id)}}">View</a>
-                                </div>
+                            <li class="flex flex-row justify-between relative block py-3 px-6 -mb-px border rounded my-1 border-gray-300 no-underline flex justify-between items-start">
+                                <h1 class="py-1.5 font-bold">{{$course->course_name}}</h1>
+                                <a class="inline-block align-middle text-center select-none border font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline bg-teal-500 text-white hover:bg-teal-600" href="{{Route('admin.courses.show',$course->id)}}">View</a>
                             </li>
                         @endforeach
                         @else
                         <li class="list-group-item">No Related Courses</li>
                     @endif
-                  </ul>
+                </ul>
             </div>
 
 
-            <div class="Back">
-                <button name="BackBtn" type="button" style="color: white;
-                padding: 8px 20px;
-                border: none;
-                border-radius: 4px;
-                cursor: pointer;
-                display: inline-block; font-size: 16px; float: right; border-radius: 8px; background-color: black;" onclick="history.back()">Back</button>
-                <button type="submit" name="submit" class="self-end inline-block align-middle text-center select-none border-2 font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline bg-blue-600 text-white hover:bg-blue-600 dark:focus:ring-gray-500 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">Update</button>
+            <div class="flex flex-row justify-between">
+                <button type="submit" name="submit" class="self-end inline-block align-middle text-center select-none border-2 font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline bg-blue-600 text-white hover:bg-blue-600 dark:focus:ring-gray-500 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
+                    Update</button>
+                <button name="BackBtn" type="button" class="inline-block align-middle text-center select-none border-2 font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline bg-blue-600 text-white hover:bg-blue-600 dark:focus:ring-gray-500 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700" onclick="history.back()">
+                    Back</button>
             </div>
 
         </form>
