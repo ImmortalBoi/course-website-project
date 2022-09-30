@@ -66,11 +66,11 @@
                             @if ($course->is_active)
                                 <label class="justify-self-end inline-block align-middle text-center select-none border font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline
                                 hover:text-green-500 hover:border-green-500 hover:bg-white
-                                bg-green-500 text-white bg-white hover:green-600" for="success-outlined">Currently Active</label>
+                                bg-green-500 text-white bg-white" for="success-outlined">Currently Active</label>
                             @else
                                 <label class="justify-self-end inline-block align-middle text-center select-none border font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline
                                 hover:text-red-600 hover:border-red-600 hover:bg-white
-                                bg-red-600 text-white bg-white hover:bg-red-700" for="danger-outlined">Currently Inactive</label>
+                                bg-red-600 text-white bg-white" for="danger-outlined">Currently Inactive</label>
                             @endif
                         </div>
 
