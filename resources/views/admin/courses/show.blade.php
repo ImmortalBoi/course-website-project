@@ -13,7 +13,7 @@
                             <h1 class="text-4xl">{{ $course->course_name }}</h1>
                         </div>
                         <div class="relative w-[500px]">
-                            <img class="w-fit rounded mb-4 shadow-lg shadow-zinc-800" src="{{ Storage::url($course->course_img) }}" onerror="this.src='{{ URL::to('/') }}/img/no-background.jpg';"/>
+                            <img class="w-[1366px] h-[368] rounded mb-4 shadow-lg shadow-zinc-800" src="{{ Storage::url($course->course_img) }}" onerror="this.src='{{ URL::to('/') }}/img/no-background.jpg';"/>
                             <div class="absolute bottom-0 left-0 right-0 p-6 container mx-auto sm:px-4 mx-auto sm:px-4 border-xl shadow-lg shadow-zinc-800 bg-slate-200 w-3/4 mb-6 rounded-lg dark:bg-gray-800 dark:border-gray-700">
                                 <p class=" "> {{ $course->course_description }}</p>
                             </div>
@@ -64,9 +64,13 @@
 
                         <div class="flex px-4">
                             @if ($course->is_active)
-                                <label class="justify-self-end inline-block align-middle text-center select-none border font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline text-green-500 border-green-500 hover:bg-green-500 hover:text-white bg-white hover:green-600" for="success-outlined">Currently Active</label>
+                                <label class="justify-self-end inline-block align-middle text-center select-none border font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline
+                                hover:text-green-500 hover:border-green-500 hover:bg-white
+                                bg-green-500 text-white bg-white hover:green-600" for="success-outlined">Currently Active</label>
                             @else
-                                <label class="justify-self-end inline-block align-middle text-center select-none border font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline text-red-600 border-red-600 hover:bg-red-600 hover:text-white bg-white hover:bg-red-700" for="danger-outlined">Currently Inactive</label>
+                                <label class="justify-self-end inline-block align-middle text-center select-none border font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline
+                                hover:text-red-600 hover:border-red-600 hover:bg-white
+                                bg-red-600 text-white bg-white hover:bg-red-700" for="danger-outlined">Currently Inactive</label>
                             @endif
                         </div>
 
@@ -78,7 +82,7 @@
                                 @csrf
                                 @method('DELETE')
                                 <button
-                                    class="inline-block align-middle text-center select-none font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline bg-red-600 text-white hover:bg-red-700 bg-white shadow-lg shadow-zinc-800"
+                                    class="my-1 inline-block align-middle text-center select-none font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline bg-red-600 text-white hover:bg-red-700 bg-white shadow-lg shadow-zinc-800"
                                     type="submit">Delete</button>
                             </form>
                         </div>
