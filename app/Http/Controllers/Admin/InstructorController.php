@@ -66,7 +66,7 @@ class InstructorController extends Controller
             'image' =>'image',
         ]);
         $data= Instructor::findOrFail($id);
-        $image = $data->instructor_img;
+        $image = $data->instructor_img; 
 
         if($request->hasFile('image')) {
             !is_null($data->instructor_img) && Storage::delete($data->instructor_img);
