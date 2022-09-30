@@ -37,7 +37,7 @@
         <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
 
         <!-- Font Awesome -->
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet">
 
         <!-- Libraries Stylesheet -->
         <link href="{{ URL::to('/') }}/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
@@ -53,7 +53,7 @@
     </head>
 
     <body class="font-sans antialiased bg-slate-100 text-darkblue dark:bg-zinc-900 dark:text-gray-200">
-        <div class="flex-col w-full md:flex md:flex-row md:min-h-screen">
+        <div class="w-full md:flex md:flex-row md:min-h-screen">
             <div @click.away="open = false" class="bg-lightblue flex flex-col flex-shrink-0 w-full text-darkblue md:w-64 dark:text-gray-200 dark:bg-darkblue" x-data="{ open: false }">
                 <div class="flex flex-row items-center justify-between flex-shrink-0 px-8 py-4">
                     <i class="fa fa-book-reader mr-3"></i>
@@ -65,7 +65,7 @@
                         </svg>
                     </button>
                 </div>
-                    <nav :class="{'block': open, 'hidden': !open}" class="flex-grow px-4 pb-4 md:block md:pb-0 md:overflow-y-auto">
+                    <nav :class="{'block': open, 'hidden': !open}" class="px-4 pb-4 md:block md:pb-0">
                         <a class="{{(strpos($path,"course"))?$selected:$notSelected}}" href="{{Route('admin.courses.index')}}">Courses</a>
                         <a class="{{(strpos($path,"categories"))?$selected:$notSelected}}" href="{{Route('admin.categories.index')}}">Category</a>
                         <a class="{{(strpos($path,"instructor"))?$selected:$notSelected}}" href="{{Route('admin.instructors.index')}}">Instructors</a>
@@ -92,10 +92,18 @@
                             </div>
                         </div>
 
-                        <a href="/darkModeToggle" id="myBtn" type="submit" class="m-4 dark:border shadow-lg shadow-zinc-800 inline-block align-middle text-center select-none font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline bg-sky-200 text-darkblue hover:bg-blue-600  dark:focus:ring-gray-500 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-700 dark:focus:ring-gray-700">Toggle</a>
+                        <a href="/darkModeToggle" id="myBtn" type="submit" class="m-4 dark:border shadow-lg shadow-zinc-800 inline-block align-middle text-center select-none font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline bg-sky-200 text-darkblue hover:bg-blue-600  dark:focus:ring-gray-500 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-700 dark:focus:ring-gray-700">
+                            @php
+                            if($mode ==""){
+                                echo "<i class='fa-solid fa-sun'></i>";
+                            }
+                            else{
+                                echo "<i class='fa-solid fa-moon'></i>";
+                            }
+                        @endphp</a>
                     </nav>
             </div>
-            <main class="m-2 p-8 w-full max-w-5xl">
+            <main class="my-5 mx-auto lg:mx-20 px-2 2xl:mx-auto w-full max-w-5xl">
                 {{$slot}}
             </main>
 

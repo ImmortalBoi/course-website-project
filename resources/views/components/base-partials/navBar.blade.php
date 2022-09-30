@@ -1,6 +1,11 @@
+@php
+    $path = Request::path();
+    $pathResult =  ($path == "")?"active":"";
+@endphp
 <!-- Navbar Start -->
 <div class="container-fluid p-0">
     <nav class="navbar navbar-expand-lg bg-white navbar-light py-3 py-lg-0 px-lg-5 dark:bg-dark">
+        {{$pathResult}}
         <a href="index.html" class="navbar-brand ml-lg-3">
             <h1 class="m-0 text-uppercase text-primary dark:text-dark"><i class="fa fa-book-reader mr-3"></i>Course Forum</h1>
         </a>
@@ -9,11 +14,11 @@
         </button>
         <div class="collapse navbar-collapse justify-content-between px-lg-3" id="navbarCollapse">
             <div class="navbar-nav mx-auto py-0">
-                <a href="{{ URL::to('/') }}/" class="nav-item nav-link active">Home</a>
-                <a href="{{ URL::to('/') }}/about" class="nav-item nav-link">About</a>
-                <a href="{{Route('course.index')}}" class="nav-item nav-link ">Courses</a>
-                <a href="{{ URL::to('/') }}/team" class="nav-item nav-link">Instructors</a>
-                <a href="{{ URL::to('/') }}/contact" class="nav-item nav-link">Contact</a>
+                <a href="{{ URL::to('/') }}/" class="nav-item nav-link {{($path == "")?"active":"";}}"><i class="fa-solid fa-house pr-1"></i> Home</a>
+                <a href="{{ URL::to('/') }}/about" class="nav-item nav-link {{($path == "about")?"active":"";}}">About</a>
+                <a href="{{Route('course.index')}}" class="nav-item nav-link {{($path == "course")?"active":"";}}">Courses</a>
+                <a href="{{ URL::to('/') }}/team" class="nav-item nav-link {{($path == "team")?"active":"";}}">Instructors</a>
+                <a href="{{ URL::to('/') }}/contact" class="nav-item nav-link {{($path == "contact")?"active":"";}}">Contact</a>
                 @if(!isset(Auth::user()->is_student))
                 <a href="{{ route('login') }}" class="nav-item nav-link">Login</a>
                 @endif
