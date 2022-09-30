@@ -2,7 +2,7 @@
 <x-admin-layout>
 
     <div class="container mx-auto sm:px-4 max-w-full mx-auto sm:px-4 py-5">
-        <form method="POST" action="{{ route('admin.instructors.store')}}" enctype= multipart/form-data class="flex flex-col">
+        <form method="POST" action="{{Route('admin.instructors.store')}}" enctype="multipart/form-data" class="flex flex-col">
             @csrf
             <div class="mb-6">
                 <label for="name" class="block mb-2 text-lg font-medium text-darkblue dark:text-gray-300">Instructor Name</label>
@@ -13,7 +13,7 @@
             </div>
 
             <div class="mb-6">
-                <label for="instructor" class="block mb-2 text-lg font-medium text-darkblue dark:text-gray-300">instructor Email</label>
+                <label for="email" class="block mb-2 text-lg font-medium text-darkblue dark:text-gray-300">instructor Email</label>
                 <input id="email" name="email" value="{{old('email')}}" type="email" class="drop-shadow-2xl bg-gray-50 border-2 border-gray-300 text-darkblue dark:text-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                 @error('email')
                         <p class="text-danger py-2"> {{$message}}</p>

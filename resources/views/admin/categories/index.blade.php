@@ -93,13 +93,10 @@
                             <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefault">
                                 @if ($courses)
                                     @foreach ($courses as $course)
-                                        <li><a class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                                                href="#">{{ $course->course_name }}</a></li>
+                                        <li><a class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" href="#">{{ $course->course_name }}</a></li>
                                     @endforeach
-                                @else
-                                    <li
-                                        class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-                                        No Related Courses</li>
+                                    @else
+                                    <li class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">No Related Courses</li>
                                 @endif
                             </ul>
                         </div>
