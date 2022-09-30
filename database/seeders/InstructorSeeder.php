@@ -15,12 +15,6 @@ class InstructorSeeder extends Seeder
      */
     public function run()
     {
-         Instructor::create([
-             'instructor_name' => 'instructor',
-             'instructor_email' => 'instructor@gmail.com',
-              'instructor_job_title' => 'job title',
-              'instructor_phone_number' => '0987654321'
-         ]);
         Instructor::factory()->count(100)->create();
     }
 }
