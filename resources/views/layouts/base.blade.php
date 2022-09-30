@@ -35,9 +35,6 @@
     <link href="{{ URL::to('/') }}/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 
     <!-- Customized Bootstrap Stylesheet -->
-@php
-
-@endphp
     <link rel="stylesheet" href="{{ URL::to('/') }}/css/{{$link}}" />
 
 
