@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('course_name')->nullable(false);
             $table->foreignId('instructor_id')->references('id')->on('instructors');
-            $table->string('course_img');
+            $table->string('course_img')->nullable();
             $table->integer('course_price');
             $table->float('course_rate')->nullable();
             $table->integer('course_lectures');
