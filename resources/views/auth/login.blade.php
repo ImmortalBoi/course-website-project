@@ -19,9 +19,9 @@
                             </div>
                                 <div class="flex-auto p-6 p-6 lg:p-12 text-black">
                                     <div class="flex flex-row justify-between">
-                                        <div class="flex items-center mb-3 pb-1">
-                                            <i class="fa fa-book-reader fa-2x me-3" style="color:blue;"></i>
-                                            <span class="text-3xl ml-2 mb-0 dark:text-white">Course Forum</span>
+                                        <div class="flex items-center mb-3 pb-1 text-lightblue">
+                                            <i class="fa fa-book-reader fa-2x me-3  "></i>
+                                            <span class="text-3xl font-bold ml-2 mb-0">Course Forum</span>
                                         </div>
 
                                         <button name="BackBtn" type="button" class="text-gray-900 border border-gray-800 hover:bg-blue-200 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:border-gray-600 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-800"
@@ -34,18 +34,18 @@
                                     <form method="POST" action="{{ route('login') }}">
                                         @csrf
 
-                                        <h5 class="fw-normal mb-3 pb-3 dark:text-white" style="letter-spacing: 1px;">Sign into your
-                                            account</h5>
+                                        <h5 class="fw-normal mb-3 pb-3 dark:text-white" style="letter-spacing: 1px;">
+                                            Sign into your account</h5>
 
-                                        <div class="form-outline mb-4">
-                                            <label class="mb-5 dark:text-white" for="form2Example17">Email address</label>
-                                            <x-text-input id="email" class="drop-shadow-xl bg-gray-50 border-2 border-gray-300 text-darkblue dark:text-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                        <div class="mb-4 flex flex-col">
+                                            <label class="mb-1 dark:text-white" for="form2Example17">Email address</label>
+                                            <input id="email" class="drop-shadow-xl bg-gray-50 border-2 border-gray-300 text-darkblue dark:text-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                                 type="email" name="email" :value="old('email')" required autofocus />
                                         </div>
 
-                                        <div class="form-outline mb-4">
-                                            <label class="dark:text-white" for="form2Example27">Password</label>
-                                            <x-text-input id="password" class="drop-shadow-xl bg-gray-50 border-2 border-gray-300 text-darkblue dark:text-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                        <div class="flex flex-col mb-4">
+                                            <label class="mb-1 dark:text-white" for="form2Example27">Password</label>
+                                            <input id="password" class="drop-shadow-xl bg-gray-50 border-2 border-gray-300 text-darkblue dark:text-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                                 type="password" name="password" required
                                                 autocomplete="current-password" />
                                         </div>
@@ -66,12 +66,12 @@
                                         </div>
 
                                         <div class="pt-1 mb-4">
-                                            <button class="inline-block align-middle text-center select-none border font-normal whitespace-no-wrap rounded  no-underline bg-gray-200 hover:text-white hover:bg-gray-900 py-3 px-4 leading-tight text-xl block w-full text-black" type="submit"
+                                            <button class="block w-full text-xl dark:border shadow-lg shadow-zinc-800 inline-block align-middle text-center select-none font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline bg-blue-600 text-white hover:bg-blue-600 dark:focus:ring-gray-500 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-700 dark:focus:ring-gray-700" type="submit"
                                                 name="submit">Login</button>
                                         </div>
 
-                                        <p class="mb-5 lg:pb-2" style="color: #393f81;">Don't have an account? <a
-                                                href="{{ route('register') }}" style="color: #393f81;">Register here</a>
+                                        <p class="mb-5 lg:pb-2 text-gray-500 dark:text-white">Don't have an account? <a
+                                                class="text-darkblue dark:text-lightblue dark:hover:text-sky-200"href="{{ route('register') }}">Register here</a>
                                         </p>
                                         <a href="#!" class="text-xs text-gray-700">Terms of use.</a>
                                         <a href="#!" class="text-xs text-gray-700">Privacy policy</a>

@@ -29,7 +29,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 
     <!-- Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
     <link href="{{ URL::to('/') }}/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
@@ -45,7 +45,7 @@
 </head>
 
 <body class="{{$mode}}">
-    <x-base-partials.topBar></x-base-partials.topBar>
+    <x-base-partials.topBar :mode="$mode"></x-base-partials.topBar>
     <x-base-partials.navBar></x-base-partials.navBar>
     {{$slot}}
     <x-base-partials.footer></x-base-partials.footer>
