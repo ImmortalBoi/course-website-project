@@ -1,7 +1,7 @@
 <x-student-layout>
     <div class="container mx-auto sm:px-4 rounded border shadow-xl bg-slate-150 w-3/4 mb-6 rounded-lg dark:bg-gray-800 dark:border-gray-700 mt-5 mb-5">
         <div class="flex flex-row ">
-                    @foreach ($student as $stn)
+            @foreach ($student as $stn)
             <div class="">
                 <div class="flex flex-col items-center text-center p-6 py-5">
                     <img class="max-w-full h-auto w-full mt-5"
@@ -42,7 +42,8 @@
                                 class="block shadow appearance-none w-full py-1 px-2 mt-1 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded" value="" disabled placeholder="state"></div>
                     </div>
                     <div class="mt-5 text-center">
-                        <a href="{{Route('editProflie',$stn->id)}}" class="dark:border shadow-lg shadow-zinc-800 inline-block align-middle text-center select-none font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline bg-blue-600 text-white hover:bg-blue-600  dark:focus:ring-gray-500 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-700 dark:focus:ring-gray-700" >Edit Profile</a>
+                        <a href="{{Route('editProflie',$stn->id)}}" class="dark:border shadow-lg shadow-zinc-800 inline-block align-middle text-center select-none font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline bg-blue-600 text-white hover:bg-blue-600  dark:focus:ring-gray-500 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-700 dark:focus:ring-gray-700">
+                            Edit Profile</a>
                     </div>
                     @endforeach
                 </div>
