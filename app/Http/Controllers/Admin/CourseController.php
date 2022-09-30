@@ -36,6 +36,7 @@ class CourseController extends Controller
             'price'=>'required|integer',
             'description'=>'required',
             'image' =>'image|required',
+            'active' => 'required',
         ]);
         $image= $request->file('image')->store('public/img/courses-img');
 
@@ -49,6 +50,8 @@ class CourseController extends Controller
             'course_duration' =>$request->duration,
             'course_level' =>$request->level,
             'course_language' =>$request->language,
+            'is_active' => $request->active,
+            'category_id' =>$request->category_id,
         ]);
 
         return to_route('admin.courses.index');
@@ -90,7 +93,7 @@ class CourseController extends Controller
             Storage::delete($data->course_img);
             $image= $request->file('image')->store('public/img/courses-img');
         }
-        
+
         $data->update([
             'course_name' =>$request->name,
             'instructor_id' =>$request->instructor_id,
