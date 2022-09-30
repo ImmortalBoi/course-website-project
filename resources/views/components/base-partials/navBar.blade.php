@@ -11,7 +11,7 @@
             <div class="navbar-nav mx-auto py-0">
                 <a href="{{ URL::to('/') }}/" class="nav-item nav-link active">Home</a>
                 <a href="{{ URL::to('/') }}/about" class="nav-item nav-link">About</a>
-                <a href="{{ URL::to('/') }}/course" class="nav-item nav-link ">Courses</a>
+                <a href="{{Route('course.index')}}" class="nav-item nav-link ">Courses</a>
                 <a href="{{ URL::to('/') }}/team" class="nav-item nav-link">Instructors</a>
                 <a href="{{ URL::to('/') }}/contact" class="nav-item nav-link">Contact</a>
                 @if(!isset(Auth::user()->is_student))
