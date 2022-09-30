@@ -9,10 +9,10 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\CourseController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\InstructorController;
+use App\Http\Controllers\FrontControllers\StaticController;
+use App\Http\Controllers\FrontControllers\FrontCourseController;
 
-Route::get('/', function () {
-    return view('index');
-})->name('main');
+Route::get('/', [StaticController::class,'index'] )->name('main');
 
 Route::get('/darkModeToggle', function () {
     darkModeController::switchMode();
@@ -26,13 +26,10 @@ Route::get('/about', function () {
 Route::resource('/contact', ContactController::class);
 Route::get('/contact/messages', [ContactController::class,'messages'])->name('messages');
 
-Route::get('/course/{id}', function () {
-    return view('detail');
-});
 
-Route::get('/course', function () {
-    return view('course');
-});
+Route::get('/course', [FrontCourseController::class, 'index'])->name('course.index');
+Route::get('/course/{id}', [FrontCourseController::class, 'show'])->name('course.show');
+
 
 Route::get('/team', function () {
     return view('team');
