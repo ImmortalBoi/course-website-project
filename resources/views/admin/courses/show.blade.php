@@ -13,7 +13,7 @@
                             <h1 class="text-4xl">{{ $course->course_name }}</h1>
                         </div>
                         <div class="relative w-[500px]">
-                            <img class="w-fit rounded mb-4 shadow-lg shadow-zinc-800" src="{{ Storage::url($course->course_img) }}" onerror="this.src='{{ URL::to('/') }}/img/no-background.jpg';"/>
+                            <img class="w-[1366px] h-[368] rounded mb-4 shadow-lg shadow-zinc-800" src="{{ Storage::url($course->course_img) }}" onerror="this.src='{{ URL::to('/') }}/img/no-background.jpg';"/>
                             <div class="absolute bottom-0 left-0 right-0 p-6 container mx-auto sm:px-4 mx-auto sm:px-4 border-xl shadow-lg shadow-zinc-800 bg-slate-200 w-3/4 mb-6 rounded-lg dark:bg-gray-800 dark:border-gray-700">
                                 <p class=" "> {{ $course->course_description }}</p>
                             </div>
