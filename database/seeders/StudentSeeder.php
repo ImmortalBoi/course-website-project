@@ -30,7 +30,7 @@ class StudentSeeder extends Seeder
             'student_email'=>'student@gmail.com',
             'student_password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
         ]);
-        User::factory()->count(10)->create([
+        User::factory()->count(100)->create([
             'is_student' => 1
         ])->each(function (User $user){
            Student::factory()->create([

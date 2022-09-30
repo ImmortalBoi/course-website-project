@@ -21,6 +21,6 @@ class InstructorSeeder extends Seeder
               'instructor_job_title' => 'job title',
               'instructor_phone_number' => '0987654321'
          ]);
-        Instructor::factory()->count(10)->create();
+        Instructor::factory()->count(100)->create();
     }
 }
