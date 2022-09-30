@@ -9,7 +9,7 @@
             </div>
         </div>
     </div>
-    <?php  $courses = DB::table('courses')->get(); ?>
+    <?php  $courses = DB::table('courses')->where('is_active', 1)->get(); ?>
     @if ($courses)
     <div class="owl-carousel courses-carousel">
         @foreach ($courses as $course )

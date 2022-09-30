@@ -66,11 +66,10 @@ class InstructorController extends Controller
             'image' =>'image',
         ]);
         $data= Instructor::findOrFail($id);
-        $image = $data->instructor_img;
+        $image = $data->instructor_img; 
 
         if($request->hasFile('image')) {
-            if(file_exists(Storage::url($data->instructor_img)));
-                Storage::delete($data->instructor_img);
+            !is_null($data->instructor_img) && Storage::delete($data->instructor_img);
             $image= $request->file('image')->store('public/instructors');
         }
         $data->update([
@@ -90,7 +89,7 @@ class InstructorController extends Controller
         $deleted = DB::table('courses')->where('instructor_id', '=', $id)->delete();
         $deleteImage =$delete->instructor_img;
         $delete->delete();
-        Storage::delete($deleteImage);
+        !is_null($deleteImage) && Storage::delete($deleteImage);
         return redirect()->Route('admin.instructors.index');
     }
 }

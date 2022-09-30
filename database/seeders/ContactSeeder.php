@@ -21,6 +21,6 @@ class ContactSeeder extends Seeder
             'subject' => 'example contact',
             'message' => 'this is an example message'
         ]);
-        Contact::factory()->count(10)->create();
+        Contact::factory()->count(100)->create();
     }
 }

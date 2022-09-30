@@ -57,7 +57,7 @@
             <div @click.away="open = false" class="bg-lightblue flex flex-col flex-shrink-0 w-full text-darkblue md:w-64 dark:text-gray-200 dark:bg-darkblue" x-data="{ open: false }">
                 <div class="flex flex-row items-center justify-between flex-shrink-0 px-8 py-4">
                     <i class="fa fa-book-reader mr-3"></i>
-                    <a href="#" class="text-lg font-semibold tracking-widest text-gray-900 uppercase rounded-lg dark:text-white focus:outline-none focus:shadow-outline">Course Forum</a>
+                    <a href="{{Route('main')}}" class="text-lg font-semibold tracking-widest text-gray-900 uppercase rounded-lg dark:text-white focus:outline-none focus:shadow-outline">Course Forum</a>
                     <button class="rounded-lg md:hidden focus:outline-none focus:shadow-outline" @click="open = !open">
                         <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
                             <path x-show="!open" fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd"></path>
