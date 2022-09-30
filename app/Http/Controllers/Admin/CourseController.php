@@ -90,7 +90,7 @@ class CourseController extends Controller
         $image=$data->course_img;
 
         if($request->hasFile('image')) {
-            Storage::delete($data->course_img);
+            !is_null($data->course_img) && Storage::delete($data->course_img);
             $image= $request->file('image')->store('public/img/courses-img');
         }
 
@@ -114,7 +114,7 @@ class CourseController extends Controller
         $delete=Course::findOrFail($id);
         $deleteImage=$delete->course_img;
         $delete->delete();
-        Storage::delete($deleteImage);
+        !is_null($deleteImage) && Storage::delete($deleteImage);
         return redirect()->Route('admin.courses.index');
     }
 }
