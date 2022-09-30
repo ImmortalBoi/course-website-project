@@ -27,8 +27,9 @@ class InstructorController extends Controller
         $request->validate([
             'name' =>'required',
             'email' =>'required|email',
-            'instructor_job_title' =>'required',
-            'instructor_phone_number' =>'required|integer',
+            'jobTitle' =>'required',
+            'phone' =>'required|integer',
+            'image' => 'image',
         ]);
         $image= $request->file('image')->store('public/instructors');
 
@@ -66,8 +67,9 @@ class InstructorController extends Controller
         $image = $data->instructor_img;
 
         if($request->hasFile('image')) {
-            Storage::delete($data->course_img);
-            $image= $request->file('image')->store('public/img/courses-img');
+            if(file_exists(Storage::url($data->instructor_img)));
+                Storage::delete($data->instructor_img);
+            $image= $request->file('image')->store('public/instructors');
         }
         $data->update([
             'instructor_name' =>$request->name,
