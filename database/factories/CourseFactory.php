@@ -16,10 +16,15 @@ class CourseFactory extends Factory
      */
     public function definition()
     {
+        $pathArray = array();
+        for ($i=1; $i < 7 ; $i++) {
+            $path = "/img/courses-".$i.".jpg";
+            array_push($pathArray,$path);
+        }
         return [
             'course_name' => fake()->text(10),
             'instructor_id' => 0,
-            'course_img' => 'public/img/courses-img/f3keMmpRX2KYfVD0Cs0fVbJE8Up48E6c9nuGgCtQ.jpg',
+            'course_img' => fake()->randomElement($pathArray),
             'course_price' => random_int(200,700),
             'course_rate' => fake()->randomFloat(3,3,5),
             'course_lectures' => random_int(10,30),
