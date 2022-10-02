@@ -1,5 +1,4 @@
-@extends('head')
-@section('content')
+<x-base-layout>
     <!-- Header Start -->
     <div class="jumbotron jumbotron-fluid position-relative overlay-bottom" style="margin-bottom: 90px;">
         <div class="container text-center my-5 py-5">
@@ -25,10 +24,10 @@
         </div>
     </div>
     <!-- Header End -->
-    <x-about></x-about>
-    <x-feature></x-feature>
-    <x-course></x-course>
-    <x-team></x-team>
-    <x-testimonial></x-testimonial>
-    <x-contact></x-contact>
-@endsection()
+    <x-base-partials.about></x-base-partials.about>
+    <x-base-partials.feature></x-base-partials.feature>
+    <x-base-partials.course></x-base-partials.course>
+    <x-base-partials.team></x-base-partials.team>
+    <x-base-partials.testimonial></x-base-partials.testimonial>
+    <x-base-partials.contact></x-base-partials.contact>
+</x-base-layout>

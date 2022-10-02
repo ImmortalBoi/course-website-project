@@ -14,9 +14,19 @@ return new class extends Migration
     public function up()
     {
         Schema::create('courses', function (Blueprint $table) {
-            $table->id('course_id');
-            $table->string('course_name');
-            $table->foreignId('instructor_id')->references('instructor_id')->on('instructors');
+            $table->id();
+            $table->string('course_name')->nullable(false);
+            $table->foreignId('instructor_id')->references('id')->on('instructors');
+            $table->string('course_img')->nullable();
+            $table->integer('course_price');
+            $table->float('course_rate')->nullable();
+            $table->integer('course_lectures');
+            $table->string('course_language');
+            $table->longText('course_description');
+            $table->enum('course_level',['All levels','Beginner','Intermediate','Expert']);
+            $table->float('course_duration');
+            $table->boolean('is_active');
+            $table->integer('category_id')->nullable();
             $table->timestamps();
         });
     }
