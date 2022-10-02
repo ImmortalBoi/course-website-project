@@ -1,4 +1,4 @@
-![img](readmeimgs\Online_Courses_Website_Project.png)
+![img](https://github.com/ImmortalBoi/course-website-project/blob/main/readmeimgs/Online_Courses_Website_Project.png)
 <h1 align="center" style="color:#f95627;font-family:ver">Welcome to Project OCW</h1>
 
 <h2 style="font-weight:bold"> Project Objective&#127919: </h2> 
@@ -112,15 +112,15 @@ Here is how you can run the project locally:
 
 - Page Dark/Light mode activated via these button:
 
-    ![dark](readmeimgs\moon.PNG) ![light](readmeimgs\sun.PNG)
+    ![dark](https://github.com/ImmortalBoi/course-website-project/blob/main/readmeimgs/moon.PNG) ![light](https://github.com/ImmortalBoi/course-website-project/blob/main/readmeimgs/sun.PNG)
 
 - Control Admin panel:
 
-    ![courses](readmeimgs\courses.png)
-    ![categories](readmeimgs\categories.png)
+    ![courses](https://github.com/ImmortalBoi/course-website-project/blob/main/readmeimgs/courses.png)
+    ![categories](https://github.com/ImmortalBoi/course-website-project/blob/main/readmeimgs/categories.png)
 
 - Contact form:
 
-    ![form](readmeimgs\contactform.png)
+    ![form](https://github.com/ImmortalBoi/course-website-project/blob/main/readmeimgs/contactform.png)
 
 
