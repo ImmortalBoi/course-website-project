@@ -1,3 +1,8 @@
+<?php
+$courses= DB::table('courses')->count();
+$instructors= DB::table('instructors')->count();
+$students= DB::table('students')->count();
+?>
 <!-- About Start -->
 <div class="container-fluid py-5">
     <div class="container py-5">
@@ -16,25 +21,25 @@
                 <div class="row pt-3 mx-0">
                     <div class="col-3 px-0">
                         <div class="bg-success text-center p-4">
-                            <h1 class="text-white" data-toggle="counter-up">123</h1>
+                            <h1 class="text-white" data-toggle="counter-up">{{$courses * 4}}</h1>
                             <h6 class="text-uppercase text-white">Available<span class="d-block">Subjects</span></h6>
                         </div>
                     </div>
                     <div class="col-3 px-0">
                         <div class="bg-primary text-center p-4">
-                            <h1 class="text-white" data-toggle="counter-up">1234</h1>
+                            <h1 class="text-white" data-toggle="counter-up">{{$courses}}</h1>
                             <h6 class="text-uppercase text-white">Online<span class="d-block">Courses</span></h6>
                         </div>
                     </div>
                     <div class="col-3 px-0">
                         <div class="bg-secondary text-center p-4">
-                            <h1 class="text-white" data-toggle="counter-up">123</h1>
+                            <h1 class="text-white" data-toggle="counter-up">{{$instructors}}</h1>
                             <h6 class="text-uppercase text-white">Skilled<span class="d-block">Instructors</span></h6>
                         </div>
                     </div>
                     <div class="col-3 px-0">
                         <div class="bg-warning text-center p-4">
-                            <h1 class="text-white" data-toggle="counter-up">1234</h1>
+                            <h1 class="text-white" data-toggle="counter-up">{{$students}}</h1>
                             <h6 class="text-uppercase text-white">Happy<span class="d-block">Students</span></h6>
                         </div>
                     </div>

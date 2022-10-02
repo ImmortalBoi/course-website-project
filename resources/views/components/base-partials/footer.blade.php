@@ -60,13 +60,10 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6 text-center text-md-left mb-3 mb-md-0">
-                <p class="m-0">Copyright &copy; <a class="text-white" href="#">Your Site Name</a>. All Rights Reserved.
+                <p class="m-0">Copyright &copy; <a class="text-white" href="#">Course Forum</a>. All Rights Reserved.
                 </p>
             </div>
-            <div class="col-md-6 text-center text-md-right">
-                <p class="m-0">Designed by <a class="text-white" href="https://htmlcodex.com">HTML Codex</a>
-                </p>
-            </div>
+            
         </div>
     </div>
 </div>

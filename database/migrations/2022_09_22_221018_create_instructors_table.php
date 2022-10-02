@@ -14,11 +14,13 @@ return new class extends Migration
     public function up()
     {
         Schema::create('instructors', function (Blueprint $table) {
-            $table->id('instructor_id');
+            $table->id();
             $table->string('instructor_name')->nullable(false);
             $table->string('instructor_email')->unique()->nullable(false);
             $table->string('instructor_img')->nullable();
-            $table->timestamps(0);
+            $table->string('instructor_phone_number')->nullable(false);
+            $table->string('instructor_job_title')->nullable(false);
+            $table->timestamps();
         });
     }
 

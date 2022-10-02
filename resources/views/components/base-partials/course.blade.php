@@ -1,3 +1,4 @@
+
 <!-- Courses Start -->
 <div class="container-fluid px-0 py-5">
     <div class="row mx-0 justify-content-center pt-5">
@@ -8,98 +9,29 @@
             </div>
         </div>
     </div>
+    <?php  $courses = DB::table('courses')->where('is_active', 1)->get(); ?>
+    @if ($courses)
     <div class="owl-carousel courses-carousel">
+        @foreach ($courses as $course )
+        <?php $name = DB::select('select instructor_name from instructors where id ='.$course->instructor_id);?>
         <div class="courses-item position-relative">
-            <img class="img-fluid" src="img/courses-1.jpg" alt="">
+            <img class="img-fluid" src="{{Storage::url($course->course_img)}}" onerror="this.src='{{ URL::to('/') }}/img/no-background.jpg';" >
             <div class="courses-text">
-                <h4 class="text-center text-white px-3">Web design & development courses for beginners</h4>
+                <h4 class="text-center text-white px-3">{{$course->course_name}}</h4>
                 <div class="border-top w-100 mt-3">
                     <div class="d-flex justify-content-between p-4">
-                        <span class="text-white"><i class="fa fa-user mr-2"></i>Jhon Doe</span>
-                        <span class="text-white"><i class="fa fa-star mr-2"></i>4.5 <small>(250)</small></span>
+                        <span class="text-white"><i class="fa fa-user mr-2"></i>{{$name[0]->instructor_name}}</span>
+                        <span class="text-white"><i class="fa fa-star mr-2"></i>{{$course->course_rate}}<small>({{rand(100,150)}})</small></span>
                     </div>
                 </div>
                 <div class="w-100 bg-white text-center p-4" >
-                    <a class="btn btn-primary" href="detail.html">Course Detail</a>
+                    <a class="btn btn-primary" href="{{ Route('course.show',$course->id ) }}">Course Detail</a>
                 </div>
             </div>
         </div>
-        <div class="courses-item position-relative">
-            <img class="img-fluid" src="img/courses-2.jpg" alt="">
-            <div class="courses-text">
-                <h4 class="text-center text-white px-3">Web design & development courses for beginners</h4>
-                <div class="border-top w-100 mt-3">
-                    <div class="d-flex justify-content-between p-4">
-                        <span class="text-white"><i class="fa fa-user mr-2"></i>Jhon Doe</span>
-                        <span class="text-white"><i class="fa fa-star mr-2"></i>4.5 <small>(250)</small></span>
-                    </div>
-                </div>
-                <div class="w-100 bg-white text-center p-4" >
-                    <a class="btn btn-primary" href="detail.html">Course Detail</a>
-                </div>
-            </div>
-        </div>
-        <div class="courses-item position-relative">
-            <img class="img-fluid" src="img/courses-3.jpg" alt="">
-            <div class="courses-text">
-                <h4 class="text-center text-white px-3">Web design & development courses for beginners</h4>
-                <div class="border-top w-100 mt-3">
-                    <div class="d-flex justify-content-between p-4">
-                        <span class="text-white"><i class="fa fa-user mr-2"></i>Jhon Doe</span>
-                        <span class="text-white"><i class="fa fa-star mr-2"></i>4.5 <small>(250)</small></span>
-                    </div>
-                </div>
-                <div class="w-100 bg-white text-center p-4" >
-                    <a class="btn btn-primary" href="detail.html">Course Detail</a>
-                </div>
-            </div>
-        </div>
-        <div class="courses-item position-relative">
-            <img class="img-fluid" src="img/courses-4.jpg" alt="">
-            <div class="courses-text">
-                <h4 class="text-center text-white px-3">Web design & development courses for beginners</h4>
-                <div class="border-top w-100 mt-3">
-                    <div class="d-flex justify-content-between p-4">
-                        <span class="text-white"><i class="fa fa-user mr-2"></i>Jhon Doe</span>
-                        <span class="text-white"><i class="fa fa-star mr-2"></i>4.5 <small>(250)</small></span>
-                    </div>
-                </div>
-                <div class="w-100 bg-white text-center p-4" >
-                    <a class="btn btn-primary" href="detail.html">Course Detail</a>
-                </div>
-            </div>
-        </div>
-        <div class="courses-item position-relative">
-            <img class="img-fluid" src="img/courses-5.jpg" alt="">
-            <div class="courses-text">
-                <h4 class="text-center text-white px-3">Web design & development courses for beginners</h4>
-                <div class="border-top w-100 mt-3">
-                    <div class="d-flex justify-content-between p-4">
-                        <span class="text-white"><i class="fa fa-user mr-2"></i>Jhon Doe</span>
-                        <span class="text-white"><i class="fa fa-star mr-2"></i>4.5 <small>(250)</small></span>
-                    </div>
-                </div>
-                <div class="w-100 bg-white text-center p-4" >
-                    <a class="btn btn-primary" href="detail.html">Course Detail</a>
-                </div>
-            </div>
-        </div>
-        <div class="courses-item position-relative">
-            <img class="img-fluid" src="img/courses-6.jpg" alt="">
-            <div class="courses-text">
-                <h4 class="text-center text-white px-3">Web design & development courses for beginners</h4>
-                <div class="border-top w-100 mt-3">
-                    <div class="d-flex justify-content-between p-4">
-                        <span class="text-white"><i class="fa fa-user mr-2"></i>Jhon Doe</span>
-                        <span class="text-white"><i class="fa fa-star mr-2"></i>4.5 <small>(250)</small></span>
-                    </div>
-                </div>
-                <div class="w-100 bg-white text-center p-4" >
-                    <a class="btn btn-primary" href="detail.html">Course Detail</a>
-                </div>
-            </div>
-        </div>
+        @endforeach
     </div>
+    @endif
     <div class="row justify-content-center bg-image mx-0 mb-5">
         <div class="col-lg-6 py-5">
             <div class="bg-white p-5 my-5">
@@ -121,10 +53,10 @@
                         <div class="col-sm-6">
                             <div class="form-group">
                                 <select class="custom-select bg-light border-0 px-3" style="height: 60px;">
-                                    <option selected>Select A courses</option>
-                                    <option value="1">courses 1</option>
-                                    <option value="2">courses 1</option>
-                                    <option value="3">courses 1</option>
+                                    <option selected>Select A Courses</option>
+                                    @foreach ($courses as $course)
+                                        <option value="{{$course->id}}">{{$course->course_name}}</option>
+                                    @endforeach
                                 </select>
                             </div>
                         </div>

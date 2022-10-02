@@ -14,10 +14,10 @@ return new class extends Migration
     public function up()
     {
         Schema::create('enrollments', function (Blueprint $table) {
-            $table->id('enrollment_id');
-            $table->foreignId('student_id')->references('student_id')->on('students');
+            $table->id();
+            $table->foreignId('student_id')->references('id')->on('students');
             $table->foreignId('course_id')->references('id')->on('courses');
-            $table->timestamps(0);
+            $table->timestamps();
         });
     }
 
