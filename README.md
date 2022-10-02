@@ -27,11 +27,11 @@ We would like to thank RMZ tech for their continuous support and tutoring, we wo
 |Ahmed Hemida | [@Ahemida96](https://github.com/Ahemida96)
 |Khaled Eldesoukey | [@ImmortalBoi](https://github.com/ImmortalBoi)
 |Mohamed Ahmed | [@Devikaze](https://github.com/Devikaze)
-|Habeba Ahmed|
+|Habeba Ahmed| [@Habeba-Ahmed]()
 
 <hr>
 <a name="requirements"></a>
-## Requirements
+## Requirements:
 
 Package | Version
 --- | ---
