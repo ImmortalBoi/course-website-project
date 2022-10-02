@@ -21,7 +21,7 @@ We would like to thank RMZ tech for their continuous support and tutoring and we
 <p style="text-align: center ;text-indent: 300px">-The PUA Team&#128150</p>
 <hr>
 
-## Team memebers:
+## Team Members:
 
 | Name | Github |
 | ----- | ------------|
