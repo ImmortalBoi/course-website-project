@@ -116,9 +116,9 @@ Here is how you can run the project locally:
 
     ![dark](https://github.com/ImmortalBoi/course-website-project/blob/main/readmeimgs/moon.PNG) ![light](https://github.com/ImmortalBoi/course-website-project/blob/main/readmeimgs/sun.PNG)
 - light main page
-    ![lightTheme](https://github.com/ImmortalBoi/course-website-project/blob/main/readmeimgs/fulldark.png)
+    ![lightTheme](https://cdn.discordapp.com/attachments/1021897827976228944/1026239591176470629/Screenshot_2022-10-02_at_23-06-16_Course_Forum_-_Online_Course_Center.png)
 - dark main page
-    ![darkTheme](https://github.com/ImmortalBoi/course-website-project/blob/main/readmeimgs/fulllight.PNG)
+    ![darkTheme](https://cdn.discordapp.com/attachments/1021897827976228944/1026239590761254912/Screenshot_2022-10-02_at_23-06-38_Course_Forum_-_Online_Course_Center.png)
 
 - Control Admin panel:
 
