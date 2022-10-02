@@ -41,12 +41,6 @@ class RegisteredUserController extends Controller
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
-        // Student::create([
-        //     'student_name' => strip_tags($request->name),
-        //     'student_email' => strip_tags($request->email),
-        //     'student_password' => Hash::make(strip_tags($request->password)),
-        // ]);
-
         $user = User::create([
             'name' =>strip_tags($request->name),
             'email' => strip_tags($request->email),
@@ -56,12 +50,10 @@ class RegisteredUserController extends Controller
             'is_student'=>1,
         ]);
 
-
         event(new Registered($user));
 
         Auth::login($user);
 
-        //return redirect()->route('st-store');
-        return redirect(RouteServiceProvider::HOME);
+        return redirect()->route('st-store');
     }
 }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Student;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
 class StudentController extends Controller
@@ -13,21 +14,17 @@ class StudentController extends Controller
         return view('index');
     }
 
-    public function store(Request $request)
+    public function store()
     {
-        // if(isset($user))
-        // echo'Success';
-        // else
-        // echo'Failed';
-        // $student = new Student();
-        // echo $target = User::where('is_student',1)->get();
-        // echo $student->student_name =$target->name;
-        // echo $student->student_email =$target->email;
-        // echo $student->student_password =$target->password ;
+          $student = new Student();
+          $target = DB::table('users')->latest()->first();
+          $student->student_name =$target->name;
+          $student->student_email =$target->email;
+          $student->student_password =$target->password ;
 
-        // $student->save();
+          $student->save();
 
-        //return redirect()->route('main');
+        return redirect()->route('main');
 
     }
 }
