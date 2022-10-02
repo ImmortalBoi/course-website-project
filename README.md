@@ -115,6 +115,9 @@ Here is how you can run the project locally:
 - Page Dark/Light mode activated via these button:
 
     ![dark](https://github.com/ImmortalBoi/course-website-project/blob/main/readmeimgs/moon.PNG) ![light](https://github.com/ImmortalBoi/course-website-project/blob/main/readmeimgs/sun.PNG)
+     
+    ![lightTheme](https://github.com/ImmortalBoi/course-website-project/blob/main/readmeimgs/lighttheme.PNG)
+    ![darkTheme](https://github.com/ImmortalBoi/course-website-project/blob/main/readmeimgs/darktheme.PNG)
 
 - Control Admin panel:
 
