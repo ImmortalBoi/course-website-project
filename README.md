@@ -40,7 +40,7 @@ Package | Version
 [Npm](https://nodejs.org/en/)  | V6.14.16+ 
 [Composer](https://getcomposer.org/)  | V2.2.6+
 [Php](https://www.php.net/)  | V8.0.17+
-[Mysql](https://www.mysql.com/)  |V 8.0.27+
+[Mysql](https://www.mysql.com/)  |V8.0.27+
 
 <a name="installation"></a>
 ## Installation
