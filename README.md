@@ -1,4 +1,4 @@
-    ![img](https://github.com/ImmortalBoi/course-website-project/blob/main/readmeimgs/Online_Courses_Website_Project.png)
+![img](https://github.com/ImmortalBoi/course-website-project/blob/main/readmeimgs/Online_Courses_Website_Project.png)
 <h1 align="center" style="color:#f95627;font-family:ver">Welcome to Project OCW</h1>
 
 <h2 style="font-weight:bold"> Project Objective&#127919: </h2> 
