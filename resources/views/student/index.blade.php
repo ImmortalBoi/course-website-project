@@ -28,13 +28,13 @@
                     </div>
                     <div class="flex flex-wrap  mb-3 mt-3">
                         <div class="md:w-full pr-4 pl-4"><label class="labels">Phone Number</label><input type="text"
-                                class="block shadow appearance-none w-full py-1 px-2 mt-1 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded" placeholder="phone number" disabled value=""></div>
+                                class="block shadow appearance-none w-full py-1 px-2 mt-1 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded" placeholder="phone number" disabled value="{{$stn->student_phone_number}}"></div>
                         <div class="md:w-full pr-4 pl-4"><label class="labels">Address</label><input type="text"
                                 class="block shadow appearance-none w-full py-1 px-2 mt-1 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded" placeholder="Address" disabled value=""></div>
                         <div class="md:w-full pr-4 pl-4"><label class="labels">Email ID</label><input type="text"
                                 class="block shadow appearance-none w-full py-1 px-2 mt-1 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded" placeholder="Email" disabled value="{{$stn->student_email}}"></div>
                         <div class="md:w-full pr-4 pl-4"><label class="labels">Education</label><input type="text"
-                                class="block shadow appearance-none w-full py-1 px-2 mt-1 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded" placeholder="Education" disabled value=""></div>
+                                class="block shadow appearance-none w-full py-1 px-2 mt-1 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded" placeholder="Education" disabled value="{{$stn->student_education}}"></div>
                     </div>
                     <div class="flex flex-wrap  mb-3 mt-3">
                         <div class="md:w-1/2 pr-4 pl-4"><label class="labels">Country</label><input type="text"

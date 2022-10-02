@@ -30,13 +30,13 @@
                         </div>
                         <div class="flex flex-wrap  mb-3 mt-3">
                             <div class="md:w-full pr-4 pl-4"><label class="labels">Phone Number</label><input type="text" name="phone"
-                                    class="block shadow appearance-none w-full py-1 px-2 mt-1 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded" placeholder="Enter phone number" value=""></div>
+                                    class="block shadow appearance-none w-full py-1 px-2 mt-1 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded" placeholder="Enter phone number" value="{{$student->student_phone_number}}"></div>
                             <div class="md:w-full pr-4 pl-4"><label class="labels">Address</label><input type="text"
                                     class="block shadow appearance-none w-full py-1 px-2 mt-1 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded" placeholder="enter address"  value=""></div>
                             <div class="md:w-full pr-4 pl-4"><label class="labels">Email ID</label><input type="text" name="email" id="email"
                                     class="block shadow appearance-none w-full py-1 px-2 mt-1 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded" placeholder="enter email id"  value="{{$student->student_email}}"></div>
-                            <div class="md:w-full pr-4 pl-4"><label class="labels">Education</label><input type="text"
-                                    class="block shadow appearance-none w-full py-1 px-2 mt-1 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded" placeholder="education" value=""></div>
+                            <div class="md:w-full pr-4 pl-4"><label class="labels">Education</label><input type="text" name="education" id="education"
+                                    class="block shadow appearance-none w-full py-1 px-2 mt-1 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded" placeholder="education" value="{{$student->student_education}}"></div>
                         </div>
                         <div class="flex flex-wrap  mb-3 mt-3">
                             <div class="md:w-1/2 pr-4 pl-4"><label class="labels">Country</label><input type="text"

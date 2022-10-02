@@ -26,6 +26,7 @@ class ProfileController extends Controller
             'name'=> 'required',
             'email'=> 'required|email',
             'image' =>'image',
+
         ]);
 
         $data= Student::findOrFail($id);
@@ -41,7 +42,15 @@ class ProfileController extends Controller
                 'student_name' =>$request->name,
                 'student_email' => $request->email,
                 'student_img' =>$image,
+                'student_phone_number' =>$request->phone,
+                'student_education' =>$request->education,
 
+              ]);
+              DB::table('users')->where('email','=',$data->student_email)
+              ->update([
+                'name' =>$request->name,
+                'email' =>$request->email,
+                'phone_number' =>$request->phone,
               ]);
 
         return redirect()->route('profile');
