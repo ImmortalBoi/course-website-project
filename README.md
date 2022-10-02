@@ -9,14 +9,13 @@
 ### In this project we provide an insights on what modern online Courses web application would look like.
 
 <hr>
-<p align="center" style="font-size: 18px;font-weight:bold">&#128158but first here is word from our team&#128158</p>
+<p align="center" style="font-size: 18px;font-weight:bold">&#128158Firstly, here is word from our team&#128158</p>
 
-In our project we were given the task to develop an
-interactive website for the purpose of providing Courses for our users to advance their knowledge of any topic that they find interesting. 
+In our project, we were given the task to develop an interactive website for the purpose of providing Courses for our users to advance their knowledge of any topic that they find interesting. 
 
 This project was developed via the usage of laravel's latest framework, although this project isn't complete in our standards and is still in beta version, we will continue working on the project and try to provide updates later on. 
 
-We would like to thank RMZ tech for their continuous support and tutoring and we would specially thank Eng. Mohamed Gamal for his efforts in providing us the necessary tools and knowledge to work on this project
+We would like to thank RMZ tech for their continuous support and tutoring, we would specially like to thank Eng. Mohamed Gamal for his efforts in providing us the necessary tools and knowledge to work on this project.
 
 <p style="text-align: center ;text-indent: 300px">-The PUA Team&#128150</p>
 <hr>
@@ -116,6 +115,10 @@ Here is how you can run the project locally:
 - Page Dark/Light mode activated via these button:
 
     ![dark](https://github.com/ImmortalBoi/course-website-project/blob/main/readmeimgs/moon.PNG) ![light](https://github.com/ImmortalBoi/course-website-project/blob/main/readmeimgs/sun.PNG)
+- dark main page
+    ![darkTheme](https://github.com/ImmortalBoi/course-website-project/blob/main/readmeimgs/darkscreen.png)
+- light main page
+    ![lightTheme](https://github.com/ImmortalBoi/course-website-project/blob/main/readmeimgs/lightscreen.png)
 
 - Control Admin panel:
 
