@@ -25,8 +25,8 @@ class InstructorController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' =>'required',
-            'email' =>'required|email',
+            'name' =>['required', 'string', 'max:255'],
+            'email' =>['required', 'string', 'email', 'max:255', 'unique:users'],
             'jobTitle' =>'required',
             'phone' =>'required|integer',
             'image' => 'image',
@@ -34,11 +34,11 @@ class InstructorController extends Controller
         $image= $request->file('image')->store('public/instructors');
 
         Instructor::create([
-            'instructor_name' =>$request->name,
-            'instructor_email' =>$request->email,
-            'instructor_job_title' =>$request->jobTitle,
-            'instructor_phone_number' =>$request->phone,
-            'instructor_img' =>$image,
+            'instructor_name' =>strip_tags($request->name),
+            'instructor_email' =>strip_tags($request->email),
+            'instructor_job_title' =>strip_tags($request->jobTitle),
+            'instructor_phone_number' =>strip_tags($request->phone),
+            'instructor_img' =>strip_tags($image),
         ]);
 
         return to_route('admin.instructors.index');
@@ -59,25 +59,25 @@ class InstructorController extends Controller
     public function update(Request $request, $id)
     {
         $request ->validate([
-            'name'=> 'required',
-            'email'=> 'required|email',
+            'name'=> ['required', 'string', 'max:255'],
+            'email'=>['required', 'string', 'email', 'max:255', 'unique:users'],
             'jobTitle' =>'required',
             'phone' =>'required',
             'image' =>'image',
         ]);
         $data= Instructor::findOrFail($id);
-        $image = $data->instructor_img; 
+        $image = $data->instructor_img;
 
         if($request->hasFile('image')) {
             !is_null($data->instructor_img) && Storage::delete($data->instructor_img);
-            $image= $request->file('image')->store('public/instructors');
+            $image= strip_tags($request->file('image'))->store('public/instructors');
         }
         $data->update([
-            'instructor_name' =>$request->name,
-            'instructor_email' =>$request->email,
-            'instructor_job_title' =>$request->jobTitle,
-            'instructor_phone_number' =>$request->phone,
-            'instructor_img' =>$image,
+            'instructor_name' =>strip_tags($request->name),
+            'instructor_email' =>strip_tags($request->email),
+            'instructor_job_title' =>strip_tags($request->jobTitle),
+            'instructor_phone_number' =>strip_tags($request->phone),
+            'instructor_img' =>strip_tags($image),
         ]);
         return redirect()->Route('admin.instructors.index');
     }

@@ -18,9 +18,9 @@
                 @if (count($instructors)>0)
                     <div class="grid grid-cols-3 gap-4">
                     @foreach ($instructors as $instructor)
-                    <div class="team-item overflow-auto drop-shadow-2xl bg-white dark:shadow-lg dark:shadow-zinc-800">
-                        <img class="max-w-full h-auto w-full" src="{{ Storage::url($instructor->instructor_img) }}" onerror="this.src='{{ URL::to('/') }}/img/no-background.jpg';">
-                        <div class="bg-gray-100 text-center p-6 dark:bg-gray-800 dark:border-gray-700">
+                    <div class="flex flex-col overflow-auto drop-shadow-2xl bg-gray-100 dark:shadow-lg dark:shadow-zinc-800 dark:bg-gray-800">
+                        <img class="w-auto h-1/2" src="{{ Storage::url($instructor->instructor_img) }}" onerror="this.src='{{ URL::to('/') }}/img/no-background.jpg';">
+                        <div class="flex flex-col items-center justify-center bg-gray-100 text-center p-6 dark:bg-gray-800 dark:border-gray-700">
                             <h5 class="mb-3">{{ $instructor->instructor_name }}</h5>
                             <h5 class="mb-3">{{ $instructor->instructor_email }}</h5>
                             <p class="mb-2">{{$instructor->instructor_job_title}}</p>

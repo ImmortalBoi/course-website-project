@@ -24,7 +24,7 @@ class CategoryController extends Controller
             'name'=>'required',
         ]);
         Category::create([
-            'category_name' => $request->name,
+            'category_name' => strip_tags($request->name),
         ]);
 
         return redirect()->route('admin.categories.index');
@@ -41,11 +41,11 @@ class CategoryController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'name'=>'required',
+            'name'=>['required', 'string', 'max:255'],
         ]);
         $update =Category::findOrFail($id);
         $update->update([
-            'category_name' => $request->name,
+            'category_name' => strip_tags($request->name),
         ]);
         return to_route('admin.categories.index');
     }

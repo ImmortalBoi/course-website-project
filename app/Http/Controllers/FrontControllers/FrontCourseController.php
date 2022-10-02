@@ -12,7 +12,7 @@ use App\Http\Controllers\Controller;
 class FrontCourseController extends Controller
 {
     public function index(){
-        $courses = DB::table('courses')->where('is_active', 1)->get();
+        $courses = DB::table('courses')->where('is_active', 1)->paginate(15);
         return view('course')->with('courses',$courses);
     }
 

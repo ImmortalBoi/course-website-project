@@ -1,3 +1,4 @@
+@section('frontTitle','Edit '.$student->student_name.' Profile')
 <x-student-layout>
     <div class="container mx-auto sm:px-4 rounded border shadow-xl bg-slate-150 w-3/4 mb-6 rounded-lg dark:bg-gray-800 dark:border-gray-700 mt-5 mb-5">
         <div class="flex flex-row ">

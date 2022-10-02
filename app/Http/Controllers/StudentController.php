@@ -15,18 +15,19 @@ class StudentController extends Controller
 
     public function store(Request $request)
     {
-        $student = new Student();
-        $target = User::where('is_student',1)->first();
+        // if(isset($user))
+        // echo'Success';
+        // else
+        // echo'Failed';
+        // $student = new Student();
+        // echo $target = User::where('is_student',1)->get();
+        // echo $student->student_name =$target->name;
+        // echo $student->student_email =$target->email;
+        // echo $student->student_password =$target->password ;
 
-        // print_r($target);
+        // $student->save();
 
-        $student->student_name =$target->name;
-        $student->student_email =$target->email;
-        $student->student_password =$target->password ;
-
-        $student->save();
-
-        return redirect()->route('main');
+        //return redirect()->route('main');
 
     }
 }

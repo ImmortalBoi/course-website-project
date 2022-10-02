@@ -27,7 +27,7 @@ class CourseController extends Controller
     public function store(CourseStoreRequest $request)
     {
         $request ->validate([
-            'name'=> 'required',
+            'name'=> ['required', 'string', 'max:255'],
             'instructor_id'=>'required',
             'lecture'=>'required|integer',
             'duration'=>'required',
@@ -41,17 +41,17 @@ class CourseController extends Controller
         $image= $request->file('image')->store('public/img/courses-img');
 
         Course::create([
-            'course_name' =>$request->name,
-            'instructor_id' =>$request->instructor_id,
-            'course_description' =>$request->description,
-            'course_price' =>$request->price,
-            'course_img' =>$image,
-            'course_lectures' =>$request->lecture,
-            'course_duration' =>$request->duration,
-            'course_level' =>$request->level,
-            'course_language' =>$request->language,
-            'is_active' => $request->active,
-            'category_id' =>$request->category_id,
+            'course_name' =>strip_tags($request->name),
+            'instructor_id' =>strip_tags($request->instructor_id),
+            'course_description' =>strip_tags($request->description),
+            'course_price' =>strip_tags($request->price),
+            'course_img' =>strip_tags($image),
+            'course_lectures' =>strip_tags($request->lecture),
+            'course_duration' =>strip_tags($request->duration),
+            'course_level' =>strip_tags($request->level),
+            'course_language' =>strip_tags($request->language),
+            'is_active' => strip_tags($request->active),
+            'category_id' =>strip_tags($request->category_id),
         ]);
 
         return to_route('admin.courses.index');
@@ -95,17 +95,17 @@ class CourseController extends Controller
         }
 
         $data->update([
-            'course_name' =>$request->name,
-            'instructor_id' =>$request->instructor_id,
-            'course_description' =>$request->description,
-            'course_lectures' =>$request->lecture,
-            'course_duration' =>$request->duration,
-            'course_level' =>$request->level,
-            'course_language' =>$request->language,
-            'course_price' =>$request->price,
-            'course_img' =>$image,
-            'category_id' =>$request->category_id,
-            'is_active' =>$request->active,
+            'course_name' =>strip_tags($request->name),
+            'instructor_id' =>strip_tags($request->instructor_id),
+            'course_description' =>strip_tags($request->description),
+            'course_price' =>strip_tags($request->price),
+            'course_img' =>strip_tags($image),
+            'course_lectures' =>strip_tags($request->lecture),
+            'course_duration' =>strip_tags($request->duration),
+            'course_level' =>strip_tags($request->level),
+            'course_language' =>strip_tags($request->language),
+            'is_active' => strip_tags($request->active),
+            'category_id' =>strip_tags($request->category_id),
         ]);
         return redirect()->Route('admin.courses.show',$id);
     }
